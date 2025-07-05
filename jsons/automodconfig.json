@@ -1,0 +1,62 @@
+{
+    "1097875257982984232": {
+        "log_channel": 1352660932970418399,
+        "whitelist": {
+            "users": [],
+            "roles": []
+        },
+        "modules": {
+            "antispam": {
+                "enabled": true,
+                "rate": 5,
+                "per": 5,
+                "action": "timeout",
+                "duration": 600
+            },
+            "antilink": {
+                "enabled": true,
+                "action": "warn"
+            },
+            "massmention": {
+                "enabled": true,
+                "limit": 5,
+                "action": "warn"
+            },
+            "badwords": {
+                "enabled": false,
+                "words": [],
+                "action": "delete"
+            }
+        }
+    },
+    "1352659084645503028": {
+        "log_channel": null,
+        "whitelist": {
+            "users": [],
+            "roles": []
+        },
+        "modules": {
+            "antispam": {
+                "enabled": false,
+                "rate": 5,
+                "per": 5,
+                "action": "timeout",
+                "duration": 600
+            },
+            "antilink": {
+                "enabled": false,
+                "action": "delete"
+            },
+            "massmention": {
+                "enabled": false,
+                "limit": 5,
+                "action": "warn"
+            },
+            "badwords": {
+                "enabled": false,
+                "words": [],
+                "action": "delete"
+            }
+        }
+    }
+}
