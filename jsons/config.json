@@ -1,0 +1,4989 @@
+{
+    "guilds": {
+        "1040165276420943895": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [
+                "1012458018438385676",
+                "980763915749322773",
+                "968168419839078470",
+                "559426966151757824"
+            ],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1043992151878545558": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1048614330784022588": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [
+                "980763915749322773",
+                "1040164815777300542",
+                "725649445701550130"
+            ],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "877512209415159850": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [
+                "155149108183695360",
+                "792842038332358656",
+                "437808476106784770",
+                "715621848489918495",
+                "980763915749322773",
+                "968168419839078470",
+                "910110392007659531",
+                "1013064607100846182",
+                "171410152690417664",
+                "557628352828014614",
+                "825617171589759006",
+                "1032712446810533919",
+                "710370237266133033",
+                "912607333551570984"
+            ],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1049079294137204736": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1062829273645338705": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "948218979787345950": {
+            "antiSpam": true,
+            "antiLink": false,
+            "whitelisted": [
+                "980763915749322773",
+                "715621848489918495",
+                "1040164815777300542",
+                "962133607248449537",
+                "499595256270946326"
+            ],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1059571219533398138": {
+            "antiSpam": true,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "977549009138901032": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1066467092905328690": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "990597944782762034": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1035794287583039588": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1075071530511388733": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1052626625679851553": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [
+                "980763915749322773"
+            ],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "986554541174575125": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [
+                "980874550424240209",
+                "612904882541690900",
+                "724656667178041355",
+                "1068024287233060935",
+                "651095740390834176",
+                "155149108183695360",
+                "825617171589759006",
+                "536991182035746816",
+                "797724282301841489",
+                "766282545330520065",
+                "753919912468152320"
+            ],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1081888633851748422": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1068060372004778016": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "925466162307932160": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [
+                "984060337315774495",
+                "980763915749322773"
+            ],
+            "punishment": "ban",
+            "prefix": "."
+        },
+        "764047874899181588": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1067051721710379008": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1089783692316127234": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1085204835059642368": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1026512645932712046": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1069120879885307924": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "977288959484911686": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [
+                "1068024287233060935",
+                "825617171589759006",
+                "831957155006513234",
+                "820753177031737414",
+                "651095740390834176",
+                "536991182035746816",
+                "155149108183695360",
+                "282286160494067712"
+            ],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1071469320640659597": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1021919716152975450": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1048961837867208765": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "977209826495062046": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "974338949650731048": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1075259590779883560": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "835249420621709353": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "903588052956508211": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [
+                "846431923534561330"
+            ],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1079758096102084728": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "836511703692345354": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "981883637580578826": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [
+                "651095740390834176",
+                "536991182035746816",
+                "856741116912861276",
+                "1168296808741613598",
+                "1013771497157972008",
+                "1024365860246278244",
+                "715621848489918495",
+                "1032300215664914523",
+                "906085578909548554",
+                "557628352828014614",
+                "825617171589759006",
+                "1026752851944415243"
+            ],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1033693440866791454": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "947843224356151306": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1089210823592906773": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1049635536027013190": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1074661675145383936": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "758555135907069964": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "758200773703761940": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1068637812007641189": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1078952131962351626": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1005484486722596885": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1086628839154786345": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1086525935802667078": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1083791021592289330": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "960932931344433243": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1033781990723428494": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1019312342544154644": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "951218595856252938": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1020717599476162620": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1070672125175812179": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [
+                "1031823522235940888",
+                "998922778189238404",
+                "1066297585846988810",
+                "715621848489918495",
+                "557628352828014614",
+                "825617171589759006",
+                "980763915749322773",
+                "1110936286757392575"
+            ],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "816045087540117504": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1090954125166002227": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1056625484261228565": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1095720032807432302": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1095704803922940004": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1040139593166626826": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1086506732693508137": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1096677986561949807": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1097875257982984232": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1100278904616390706": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1109125793742860432": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1102347124974297220": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1108786704422273124": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1094456048674418791": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1122946976376430612": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "938667941766000670": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [
+                "980763915749322773",
+                "503974255055077397",
+                "1064733370736709652",
+                "1087055361820856422",
+                "536991182035746816",
+                "715621848489918495",
+                "856741116912861276"
+            ],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1074319243648172102": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [
+                "942780628942872696",
+                "1032713012760543345",
+                "1101519885038788618",
+                "1105893459405058078"
+            ],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1114860133797867600": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1079071319838179458": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1123602701507375104": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1130853603519774871": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1128366539423367259": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1004306435741585478": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "875688708748242975": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1120617569984974920": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1084047828420153385": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1105171047529074719": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [
+                "1072214150509510706"
+            ],
+            "punishment": "ban",
+            "prefix": "bol"
+        },
+        "1083018696211058739": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "786889267409453057": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "916183329949249536": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "907657426973642773": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1130199528415440926": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1076233132149325985": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1127299956584235019": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1119305345374896128": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1117398144397873152": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1129722520057151588": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1104272136031453246": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "915551178320936980": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1075295665019691008": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1103371904091439134": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1104282826628661259": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1125110307489071186": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1078625307357102081": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1124246793044107354": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1041441883995504821": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1080120853687177256": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1046433959296372806": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1039025340774891641": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1120046515763826849": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1125991675811090602": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1090715925247963149": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "853274104067784745": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "949977417177505792": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1009423044063789057": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1131942492837789817": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1116363308044402782": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1084930399597248665": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1115455914468712468": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1111055783719874560": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1120091215052939384": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1118959030010908742": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "893663131702816798": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1120782259763548273": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1112779354020257898": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "992392075616202752": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1118420597739888680": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1118248004474896474": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1089245562227937281": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "710660997211357205": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1092820885959872583": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1120605289918509189": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1107320871506432124": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "963384250235764756": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1013857318032650300": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1121123149786914866": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1079834881086980136": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1135022327868964965": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1133708729880158278": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1005882198580281445": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1120165591886598194": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "999915670349299752": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1083863376888860683": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1121161700612251758": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1120930127388344350": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1059713157582565416": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "895317715659673600": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1120034186745630791": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1108279797051834458": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1129085792061497447": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1105384259637739571": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1078984011243868171": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1072108627298623579": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [
+                "1103198340914610176",
+                "1032715529795932170"
+            ],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "801057803095113759": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1112461603120623636": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1002313535180779520": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1108344050089721899": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "970879070176960532": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "994572314077315072": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1118153473024872490": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [
+                "472911936951156740",
+                "797339074146205706"
+            ],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1111711195288838144": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1020313163004133416": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1041053497287782402": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1114779651194245143": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1137049664395427962": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1008804102676951150": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "918865584186339348": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1122633714824908955": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1026134127512129676": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1050036720298639410": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1126610573375840327": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1121256541144764516": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1103925943342465034": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1131668203764990112": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1108993231296929814": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "930851465977790564": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1121899254508699660": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1121072478203162804": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1079989563004563516": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1123989830762762373": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1122529913916883074": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1093364543478054944": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1138521750552969316": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1134690538260549733": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1138742483577225227": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "928205351881408522": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1106263594615717929": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1120162666934177885": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1009003691854024735": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1136735293496627240": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "816642211520446494": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1122214370013888572": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1125708546252734485": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1105780603418320956": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [
+                "1032713012760543345",
+                "942780628942872696",
+                "1101519885038788618",
+                "282286160494067712"
+            ],
+            "punishment": "ban",
+            "prefix": "kya"
+        },
+        "1138531783248457738": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1086272635027066900": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1099027515202351235": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1115162725610438658": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1103581564513824828": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1095677062146179192": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1137497115208196098": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1112375386949570692": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1108713859415560233": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1129891599015481447": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1077626235909312552": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1120802175178768465": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1121219040577339484": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1106415282752344136": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "949543359062618163": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1139927567244214343": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1061567400484548699": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1130483627692662887": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1120372250831499388": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "898223887781855353": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1071349477727809599": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1092425235032199190": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1113481370644262932": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [
+                "540349722540507166",
+                "187009725143973888"
+            ],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1121347566450253895": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1123840196996247574": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1120900918888648755": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1137317948361556080": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "!"
+        },
+        "1112834617565773927": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1122185617627951106": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1140006902022013011": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1121205816456925255": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1130830609669951540": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1066693525154041876": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1130153871394742294": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1141057408144252949": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1118595022972010526": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1140619784258605086": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "&"
+        },
+        "1047582770366517430": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1091408366284329061": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1061159890611097620": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1022762836432277534": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1117725203896745984": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1070054069764370572": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1110721081104416768": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "566539031127523338": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1141617581707493456": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1138525668292952165": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1142175920703164538": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1096209088091791492": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1142175586635223091": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1035316967684460604": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1064479456191840346": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1073758267135754371": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1061586610505920532": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1089110174326861867": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "965165618519216208": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1121139133599977502": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "843829765051908106": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1142771318786379830": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1142037572449742878": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1142832842569695332": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1143133659587686460": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1121289480557568144": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1069905258203066378": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1139137574045241436": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1143574499451748365": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1143921167963533344": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [
+                "536991182035746816",
+                "1143100590268878848",
+                "1108747361448104007",
+                "880128426730729533",
+                "1110511908789948456"
+            ],
+            "punishment": "ban",
+            "prefix": "."
+        },
+        "1120417490032406568": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1121545320845811856": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1132535489409339423": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1110801048362291299": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1028201814203584534": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1072029093429772398": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1137831193950302289": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1128576576326484008": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "810793597610885131": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1145190226847866920": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1120314050212003911": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [
+                "1057336476620312636",
+                "1110511908789948456",
+                "536991182035746816",
+                "825617171589759006",
+                "1013771497157972008",
+                "824119071556763668",
+                "715621848489918495",
+                "235148962103951360",
+                "437808476106784770",
+                "422087909634736160",
+                "959699003010871307"
+            ],
+            "punishment": "ban",
+            "prefix": "."
+        },
+        "1056918266339143680": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1135277497181814814": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1123297783101784116": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1087456363900309555": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "936956071522750534": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1077505288531345488": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1146114643148951662": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [
+                "723012683711905874",
+                "1091424277707882507"
+            ],
+            "punishment": "kick",
+            "prefix": "$"
+        },
+        "945202251243356171": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1115527901144682526": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1088733592617766964": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1105195818312548392": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1093374600798273717": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1147814989365792818": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [
+                "1057336476620312636",
+                "1110511908789948456",
+                "1143100590268878848"
+            ],
+            "punishment": "ban",
+            "prefix": "."
+        },
+        "1122313398655406101": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "988526262576373821": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1071203422575009833": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1135221498123132979": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [
+                "416358583220043796",
+                "678344927997853742"
+            ],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1113832232193376316": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [
+                "825617171589759006",
+                "1165918376695177246",
+                "911854646128177173",
+                "1011179835537764424",
+                "1047461613990580294",
+                "1040194948496109569",
+                "416358583220043796",
+                "1089590605614698587"
+            ],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1156510839956852757": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1052242333170679818": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1155296430282506340": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1147810679546458205": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1156893996023558226": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1151225495791341671": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1149937013169078363": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1140844312729497620": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1148979090553049198": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1154078200335437844": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1152911535069466706": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1005832900777889843": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1156641157330247831": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1057300993030770748": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "901648004283527230": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1034735259905970206": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1157367158125383822": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1161513429203435530": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1151954773260648579": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1159040910303174689": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "."
+        },
+        "1102260579231596645": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1151564365762396302": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1152186032146612225": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1138112658042785814": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [
+                "651095740390834176",
+                "1022185236798373941",
+                "856741116912861276",
+                "1012665558845624420",
+                "536991182035746816",
+                "906085578909548554",
+                "240254129333731328",
+                "825617171589759006",
+                "532805438962401282"
+            ],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1146398076077092904": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1142136101994254366": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "889108402339463199": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1121596774189125663": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1161964894594277379": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1121302989274103810": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1122449139481976892": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1155136019935526963": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1146114131435470930": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1161935993293783070": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "-"
+        },
+        "1147917305624412170": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1142785447760765029": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1162980510994272339": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "851493073313464361": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1077973363072434277": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1162820574016446484": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1163904595588821092": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "."
+        },
+        "1135704026554581065": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1147220685396119552": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1058081310775717958": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "704238973127491655": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1164320924200337490": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1009084482747387904": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1164478954447573053": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [
+                "1110936286757392575",
+                "1069517438774935573"
+            ],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1104473447221952584": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [
+                "883313821354197002",
+                "1008372593729994824",
+                "1151131554895110174",
+                "1170659343750922274",
+                "559426966151757824",
+                "825617171589759006"
+            ],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1076266048598327427": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1164159431169294437": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1035055071697842176": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [
+                "1032300215664914523",
+                "536991182035746816",
+                "856741116912861276",
+                "825617171589759006",
+                "906085578909548554",
+                "1069125858096328736",
+                "1029011141126520892",
+                "1078635323602505738",
+                "651095740390834176"
+            ],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1118545917612658802": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1164381236463157269": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1121870373286318213": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1151121038567014400": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "."
+        },
+        "1166047943309148220": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1069563925881958401": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [
+                "825617171589759006",
+                "715621848489918495",
+                "651095740390834176",
+                "1053964518180536410",
+                "1168581177557385359",
+                "1050124073168023612",
+                "1151490915760873502"
+            ],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1166102459836530698": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1097856107705270408": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [
+                "651095740390834176",
+                "1090012112325181520",
+                "235148962103951360",
+                "1208892061500055592",
+                "1189216172592336918",
+                "532805438962401282",
+                "804605326049542154",
+                "921170512766435348",
+                "715621848489918495",
+                "1201410504845963327",
+                "729987736659951680",
+                "1163369009681551370",
+                "1198887580729622599",
+                "887375638992920576",
+                "1048564994482130995",
+                "588956889488818177"
+            ],
+            "punishment": "kick",
+            "prefix": "$"
+        },
+        "1166303696263585852": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [
+                "536991182035746816",
+                "1114568817608237076",
+                "825617171589759006",
+                "1066297585846988810",
+                "870179991462236170",
+                "1060027928206917682",
+                "792842038332358656"
+            ],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1122056646928121967": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "981560301197615185": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1166628521079222323": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1145783797321838632": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [
+                "1155949460011102229",
+                "1145779620365471894",
+                "876273313729642497",
+                "1155942072138858528",
+                "1110265333157204018",
+                "852820712238481408",
+                "1163161459480613015",
+                "1155934203423227974",
+                "1155964817413259314",
+                "1155934337473200178",
+                "155149108183695360",
+                "918123757015564359",
+                "235148962103951360",
+                "997843826855137280",
+                "699027068331229264",
+                "472911936951156740",
+                "1180448205989756948"
+            ],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1166769951529513050": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [
+                "1066297585846988810",
+                "998925933157306490",
+                "1110936286757392575",
+                "557628352828014614",
+                "876273313729642497",
+                "715621848489918495",
+                "1134877437562454148",
+                "1032214863767932929",
+                "1031762803729629254",
+                "536991182035746816",
+                "984668374334337074",
+                "1029065620878282792",
+                "1179478613637218314",
+                "1168671283874123903"
+            ],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1166797448337956874": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1119541352686944256": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [
+                "824119071556763668",
+                "235148962103951360",
+                "825617171589759006",
+                "536991182035746816",
+                "651095740390834176",
+                "557628352828014614",
+                "282859044593598464",
+                "715621848489918495",
+                "437808476106784770",
+                "1013771497157972008",
+                "853327905357561948"
+            ],
+            "punishment": "ban",
+            "prefix": "."
+        },
+        "1119234101459820645": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [
+                "1040194948496109569",
+                "1168296808741613598",
+                "847108095804571678",
+                "715621848489918495",
+                "894177762787622942",
+                "803139698767298572",
+                "493716749342998541",
+                "1013771497157972008",
+                "1168265062197231768",
+                "933406003473571870",
+                "933405988663472269",
+                "933403442200850513",
+                "933406306142928918",
+                "933401822197088327",
+                "155149108183695360",
+                "235148962103951360",
+                "1090012112325181520",
+                "856741116912861276",
+                "1198887580729622599"
+            ],
+            "punishment": "ban",
+            "prefix": "?"
+        },
+        "1167158095122808882": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1119253101413670993": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1150348475314221097": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1102875624974057562": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1167858741341847663": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1164553172380028938": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [
+                "825617171589759006",
+                "715621848489918495",
+                "651095740390834176",
+                "980763915749322773",
+                "912607333551570984",
+                "710370237266133033",
+                "155149108183695360",
+                "678344927997853742",
+                "437808476106784770",
+                "171410152690417664",
+                "1070300354715078747",
+                "980763915749322773",
+                "914569292689846302",
+                "1071208640545030236",
+                "796608949977219082",
+                "980874550424240209",
+                "1013064607100846182",
+                "742614187003347044"
+            ],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1162343076254199809": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1104717825223970936": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1168563555302379580": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1168238457152339988": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1162773195858919546": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1167708306320662620": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1127315655507583027": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1095012361229844482": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1157445797927985162": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1166679776388452423": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [
+                "798097249774731264"
+            ],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1132030428816085055": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1156929858060951592": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1121966680449490996": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1116768210843344997": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1170665742161674290": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1138531773853224963": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1121866523875749931": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1171944126493769830": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1167895348509950013": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1146709003519406110": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1078251123049238599": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1148892139636412486": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1170022755958263920": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "934757699059597372": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1173736955972943972": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1027143444692471869": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1172448335907524679": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1173927410899628073": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1174194653826908210": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1136103901607776379": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [
+                "1060027928206917682",
+                "1041384689535037600",
+                "1109737341142179861",
+                "1072922340310122647",
+                "914468563673309245",
+                "870897827054751745"
+            ],
+            "punishment": "kick",
+            "prefix": "$"
+        },
+        "1169107235889238056": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1171663097816174622": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "879407663954415676": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1090645208842113046": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1092329346011758592": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1107701112070475887": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1176896062296969216": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1090904217163677738": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1177184348886274108": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [
+                "1123998517489319968",
+                "984409270344908872",
+                "1029065620878282792"
+            ],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1122140570324828221": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "974569787852210256": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [
+                "906085578909548554",
+                "536991182035746816",
+                "825617171589759006",
+                "651095740390834176",
+                "1057764713099952208",
+                "1078635323602505738",
+                "856741116912861276",
+                "1032300215664914523",
+                "1168296808741613598",
+                "1013771497157972008",
+                "1049830932997218354",
+                "1181152203080216646"
+            ],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1178058309006266497": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1176839571615518770": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1156059289190928485": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1166025996416323655": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1041045580979380315": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [
+                "980763915749322773",
+                "1165859010247921725",
+                "297153970613387264",
+                "557628352828014614",
+                "678344927997853742",
+                "493224032167002123",
+                "595044240753557505",
+                "1095527961039491072",
+                "1186116897347997729",
+                "1165955125207113738"
+            ],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1159305910640984185": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1173181695499968522": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "942248805410148383": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1178753039134372012": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1179783647541334046": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1179787412835160064": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1080717966120849479": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1175400615581585449": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1180480770150764607": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1180479145529061507": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1123304953696497726": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1168899493446549585": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1180503072053669949": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1146151795563966514": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1181885130164416534": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [
+                "984668374334337074",
+                "339254240012664832",
+                "1076450980738109491"
+            ],
+            "punishment": "ban",
+            "prefix": "-"
+        },
+        "1119917087759024139": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1144576901638271007": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1127390778415648800": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1183206163521753168": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1167442853711069214": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1162226777972805694": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1183475027937603624": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [
+                "1023125379466133515",
+                "1040194948496109569"
+            ],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1177275354549854348": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1182741660849946765": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1174952709095440404": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1167116831325171924": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1181878872548069378": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1184076235819712523": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1185368080566730813": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1185523930384044062": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "986291882017583124": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1173180004771840102": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [
+                "651095740390834176",
+                "536991182035746816",
+                "1168296808741613598",
+                "1024365860246278244",
+                "899899858981371935",
+                "1076117513886244957",
+                "1078635323602505738",
+                "825617171589759006",
+                "1153356413620465704"
+            ],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1185939805272559748": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1185962919943483522": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1184924759302078464": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1182969988462673940": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "803655485609345045": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "899144844381917254": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1183330075534430218": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1161087359966793888": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1162309918821457981": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1186961828769706038": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1186901418943193218": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "add"
+        },
+        "1181184394141114408": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1185557907266355230": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1188018766202818590": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1188733940706590810": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [
+                "1066297585846988810",
+                "883997337863749652",
+                "1181358127828959325",
+                "980874550424240209",
+                "825617171589759006",
+                "1032214863767932929",
+                "235148962103951360",
+                "557628352828014614",
+                "1029065620878282792",
+                "715621848489918495",
+                "1066293928128696320",
+                "1024365860246278244",
+                "1071808240981127258",
+                "920336941155749929",
+                "550613223733329920",
+                "1036503458066468935",
+                "1209851862279520296",
+                "922815980038651936",
+                "852561898774724648",
+                "1200812348202557577",
+                "1219141942017921106",
+                "870179991462236170"
+            ],
+            "punishment": "ban",
+            "prefix": "dot?"
+        },
+        "1177297656301764688": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1098364099206860851": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1121218699257458812": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1189126364343848970": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "878871987710230551": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1171938176089206847": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1183128513348374638": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1176493599647617074": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1189912279131639828": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1122436152264233091": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1184906066203529226": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [
+                "825617171589759006",
+                "1029065620878282792"
+            ],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1190649964603396106": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1140199756161892422": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1175881658063396894": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1191019141155520624": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [
+                "825617171589759006",
+                "1079459656986005627"
+            ],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1189129047284924477": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "&"
+        },
+        "1191555568322748526": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1153683513514672261": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "658000804829069354": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1191719893838614610": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1192097012691255357": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1192820804459692092": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [
+                "825617171589759006",
+                "155149108183695360",
+                "899515135419371551",
+                "1026393586977230859",
+                "1188384918342996060"
+            ],
+            "punishment": "kick",
+            "prefix": "$"
+        },
+        "1052274199596630076": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1193444732651704422": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1182603112394018896": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [
+                "980874550424240209",
+                "1162635238514622474",
+                "883997337863749652",
+                "1112284702599037000",
+                "1112334748656861365",
+                "906085578909548554",
+                "557628352828014614",
+                "715621848489918495",
+                "1185632471438590073",
+                "1029065620878282792",
+                "1066297585846988810",
+                "1099720841584984174",
+                "985780581096906762",
+                "1099578470348099594",
+                "1160492396954533898",
+                "919102583308697610",
+                "922870766356279306",
+                "1040194948496109569",
+                "1071808240981127258",
+                "536991182035746816",
+                "235148962103951360",
+                "651095740390834176",
+                "1033496708992204840",
+                "1181358127828959325",
+                "1024365860246278244",
+                "1222474024144080987"
+            ],
+            "punishment": "ban",
+            "prefix": "h"
+        },
+        "945319818859520011": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1110927764107841606": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1196377094674976849": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1169280000973877338": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1190178437697114142": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1196323828947759154": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1084894223641366630": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1187752997883744296": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1192428100475170867": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1198747971815211150": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1124348468417265806": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1088496134319767682": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1168866484328599643": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1198924692929642566": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1198664396554121276": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1131265715941429422": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1190588621456150638": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "921703796915200010": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1151452419700559894": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1200003665671487540": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1196419403542175744": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1008364212411699250": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1175813931974004887": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1201538991573454898": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1200057502927171584": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "948579352126308383": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1200363976756826162": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1206756221487685672": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1207981284367007754": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1200720389064642560": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "991316712744038430": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1197167128474832946": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1197915117204013157": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1178953291053416468": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1104032406408810649": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [
+                "1104026217507725414",
+                "612904882541690900",
+                "980874550424240209",
+                "1068024287233060935",
+                "651095740390834176",
+                "825617171589759006",
+                "536991182035746816",
+                "155149108183695360",
+                "282286160494067712"
+            ],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1205395130115166258": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1148917033019387954": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1209122570692198400": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1210272230529966130": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1155146449777078282": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1209040964929331220": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1188898213399371856": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1203761824873320488": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1200457901131714590": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1098268290276671549": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [
+                "1121032089274437693"
+            ],
+            "punishment": "kick",
+            "prefix": "$"
+        },
+        "1205880958822125688": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1211378042937802772": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1193222086878048397": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1014750928848572477": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [
+                "651095740390834176",
+                "906085578909548554",
+                "856741116912861276",
+                "536991182035746816",
+                "1032300215664914523",
+                "1024365860246278244",
+                "715621848489918495",
+                "1079065956841697400",
+                "1198887580729622599",
+                "1168296808741613598",
+                "785007022483177473"
+            ],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1073895264710033489": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1171395225856528385": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1211287422147764224": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1107589524135084082": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1212090263564976149": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1108449023221829672": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1181316130351087746": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1181339396855844954": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "945726807531999252": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1072926461511606272": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1213356579345145886": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [
+                "814861566993498132",
+                "753919912468152320",
+                "651095740390834176",
+                "825617171589759006",
+                "155149108183695360",
+                "536991182035746816"
+            ],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1214536218935693342": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1213879593023311914": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1201797508452585544": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1178292526311014481": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "<@928563591001563199>"
+        },
+        "1031627813075304488": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1155656389235052655": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1216306586293633024": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1212760767556747314": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1213148120809082890": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1168746995087847434": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1219880790045884547": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1219881818900271145": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1164834932770734120": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1219882993607376927": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1218239582408151180": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1168554648844644403": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1219881354767110155": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1216584597710700564": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1175128226037780632": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1220735824245559446": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1106591085549068432": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1133076346956955680": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1002240585115119677": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1215625877702975518": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1140921011626319913": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1201197026667405434": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1223121955121664090": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "898531210328932353": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "918127846709411880": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1197813045045501962": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "845671275846303764": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1223591037554003978": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1204581174278758430": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1146333529916059698": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1206209998028275733": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1224532710933135491": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1224731604543606976": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [
+                "1137104618569085079"
+            ],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1224994972844163093": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1175499690679214230": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1208740262243864646": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1226111093001424946": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1226111523337011241": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [
+                "651095740390834176",
+                "437808476106784770",
+                "235148962103951360",
+                "270904126974590976",
+                "302050872383242240",
+                "1145363441524166758",
+                "408785106942164992",
+                "678344927997853742",
+                "980763915749322773"
+            ],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1215992706602500136": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1122595188213285004": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "?"
+        },
+        "1188397130390450196": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1153651672451665961": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1226923942304809083": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1227229582986444800": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1227530435437920317": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1227697567622627489": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1227849356116361296": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1227877150732980254": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1228650669070614538": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [
+                "1149985991537475584",
+                "1134061145796382772",
+                "1174002502711128115"
+            ],
+            "punishment": "kick",
+            "prefix": "$"
+        },
+        "1199357833955770418": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [
+                "981428729081393172",
+                "1172532343085477888"
+            ],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "777361647512977419": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1089253634631544983": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1085612291963232387": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1230029008683401256": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1025393657118998599": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [
+                "1149985991537475584",
+                "1174002502711128115",
+                "1165228870040043561"
+            ],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1208142891352985621": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1116607855022325851": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1276154927558823966": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1235064453540610090": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1256624968469577861": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "927989996902842408": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1261660395886870558": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1259207360363368559": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1144930804313632879": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "725736679813677087": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1266957299902054495": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1297553838424854630": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1233772092894216313": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1193172688932438130": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1270249732458938459": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1157329291110011002": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1104424191937220700": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1243883519382650910": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1051425856490315787": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1248660668316651663": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1259970735326101594": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1080914227054776330": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1207981688844460092": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1145956970168332319": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1255765749868527667": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1242414177860190208": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1269593197290721301": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1279475350136684675": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1253954990788055041": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1169209786366164992": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1246392911675920394": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1298741691330854922": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1262802499585179801": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1220267167040274473": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1262771553339310121": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1299066409275621406": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1232686080055185448": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1221760866731556927": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1300472126658056363": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1276698490499629167": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1188477683194138666": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "818137279846940702": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1228291087907557437": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1277645044102463610": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1334766749274472478": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1333609606487740528": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1347166908524396565": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1352659084645503028": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        },
+        "1243809344722833438": {
+            "antiSpam": false,
+            "antiLink": false,
+            "whitelisted": [],
+            "punishment": "ban",
+            "prefix": "$"
+        }
+    }
+}
