@@ -9,7 +9,7 @@ import asyncio
 class antivanity(Cog):
     def __init__(self, client: Luka):
         self.client = client
-        self.headers = {"Authorization": f"Bot token"}
+        self.headers = {"Authorization": f"Bot [REDACTED_TOKEN]"}
         print("Cog Loaded: AntiVanity")
 
     async def protect_vanity(self, guildid):

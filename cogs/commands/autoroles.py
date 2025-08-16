@@ -1,12 +1,17 @@
 import discord
 from discord.ext import commands
 import json
+from utils import *
+from utils.checks import global_check
 
 class Autorole(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
         self.config_file = 'jsons/autorole.json'
         self.load_config()
+        
+    async def cog_check(self, ctx: commands.Context) -> bool:
+        return await global_check(ctx)
 
     def load_config(self):
         try:

@@ -5,19 +5,23 @@ from core import *
 from utils.Tools import *
 from typing import Optional
 from utils import Paginator, DescriptionEmbedPaginator, FieldPagePaginator, TextPaginator
+from utils.checks import global_check
 
 class Ignore(commands.Cog):
 
     def __init__(self, bot):
         self.bot = bot
         self.color = 0x2f3136
+        
+    async def cog_check(self, ctx: commands.Context) -> bool:
+        return await global_check(ctx)
 
     @commands.group(name="ignore", invoke_without_command=True)
     @commands.cooldown(1, 5, commands.BucketType.user)
     @commands.max_concurrency(1, per=commands.BucketType.default, wait=False)
     @commands.guild_only()
     @commands.has_permissions(administrator=True)
-    @blacklist_check()
+    
     async def _ignore(self, ctx):
         if ctx.subcommand_passed is None:
             await ctx.send_help(ctx.command)
@@ -28,7 +32,7 @@ class Ignore(commands.Cog):
                    invoke_without_command=True)
     @commands.cooldown(1, 5, commands.BucketType.user)
     @commands.max_concurrency(1, per=commands.BucketType.default, wait=False)
-    @blacklist_check()
+    
     @commands.guild_only()
     @commands.has_permissions(administrator=True)
     async def _channel(self, ctx):
@@ -122,7 +126,7 @@ class Ignore(commands.Cog):
                    invoke_without_command=True)
     @commands.cooldown(1, 5, commands.BucketType.user)
     @commands.max_concurrency(1, per=commands.BucketType.default, wait=False)
-    @blacklist_check()
+    
     @commands.guild_only()
     @commands.has_permissions(administrator=True)
     async def _user(self, ctx):
@@ -218,7 +222,7 @@ class Ignore(commands.Cog):
     @commands.max_concurrency(1, per=commands.BucketType.default, wait=False)
     @commands.guild_only()
     @commands.has_permissions(administrator=True)
-    @blacklist_check()
+    
     async def _exclude(self, ctx):
         if ctx.subcommand_passed is None:
             await ctx.send_help(ctx.command)
@@ -240,7 +244,7 @@ class Ignore(commands.Cog):
                    invoke_without_command=True)
     @commands.cooldown(1, 5, commands.BucketType.user)
     @commands.max_concurrency(1, per=commands.BucketType.default, wait=False)
-    @blacklist_check()
+    
     @commands.guild_only()
     @commands.has_permissions(administrator=True)
     async def _buser(self, ctx):
@@ -331,8 +335,8 @@ class Ignore(commands.Cog):
     @_user.command(name="show",
                         help="Shows list of ignored users in the server .",
                         usage="ignore user show")
-    @blacklist_check()
-    @ignore_check()
+    
+    
     @commands.cooldown(1, 4, commands.BucketType.user)
     @commands.max_concurrency(1, per=commands.BucketType.default, wait=False)
     @commands.guild_only()
@@ -366,8 +370,8 @@ class Ignore(commands.Cog):
     @_buser.command(name="show",
                         help="Shows list of ignore exclude users in the server .",
                         usage="ignore user show")
-    @blacklist_check()
-    @ignore_check()
+    
+    
     @commands.cooldown(1, 4, commands.BucketType.user)
     @commands.max_concurrency(1, per=commands.BucketType.default, wait=False)
     @commands.guild_only()

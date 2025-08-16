@@ -4,6 +4,8 @@ import json
 import time
 from typing import Optional
 import aiofiles
+from utils import *
+from utils.checks import global_check
 import asyncio
 
 class BasicView(discord.ui.View):
@@ -40,6 +42,12 @@ class Afk(commands.Cog):
         self.afk_path = "jsons/afk.json"
         self.afk_cache = {}
         self.client.loop.create_task(self._load_data())
+
+    async def cog_check(self, ctx: commands.Context) -> bool:
+        """This check runs for every command in this cog."""
+        # You can call your global check function here
+        return await global_check(ctx)
+
 
     async def _load_data(self):
         try:

@@ -30,7 +30,7 @@ proxies={"http": 'http://' + next(proxs)}
 class antiemojiu(Cog):
     def __init__(self, client):
         self.client = client      
-        self.headers = {"Authorization": f"Bot token"}
+        self.headers = {"Authorization": f"Bot [REDACTED_TOKEN]"}
         print("Cog Loaded: Antiemojiu")
     @commands.Cog.listener()
     async def on_guild_emojis_update(self, guild, before, after) -> None:

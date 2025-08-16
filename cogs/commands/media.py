@@ -1,12 +1,28 @@
 import discord
 from discord.ext import commands
 import json
+from utils import *
+from utils.checks import global_check
 
 class Media(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
         with open('jsons/media.json', 'r') as f:
             self.config = json.load(f)
+            
+    async def cog_check(self, ctx: commands.Context) -> bool:
+        return await global_check(ctx)
+
+    def help2_custom(self):
+        emoji = '<:media:1089136852100980806>'
+        label = "Media"
+        description = "Shows some useful media commands."
+        return emoji, label, description
+
+    @commands.group()
+    async def __Media__(self, ctx: commands.Context):
+        """`media setup`, `media reset`, `media config`"""
+
 
     def save_config(self):
         with open('jsons/media.json', 'w') as f:
@@ -82,3 +98,7 @@ class Media(commands.Cog):
         if can_delete:
             await message.delete()
             await message.channel.send(f"<:info:1087776877898383400> | {message.author.mention}, this is a media-only channel. Please only send messages with media attachments here.", delete_after=5)
+            
+            
+def setup(bot):
+    bot.add_cog(Media(bot))

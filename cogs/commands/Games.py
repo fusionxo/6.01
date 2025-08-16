@@ -1,9 +1,24 @@
 import discord
 from discord.ext import commands
+from utils import *
+from utils.checks import global_check
 
 class Games(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
+        
+    async def cog_check(self, ctx: commands.Context) -> bool:
+        return await global_check(ctx)
+        
+    def help_custom(self):
+		      emoji = '<:games:1088451606049198091>'
+		      label = "Games"
+		      description = "Shows the fun commands."
+		      return emoji, label, description
+
+    @commands.group()
+    async def __Games__(self, ctx: commands.Context):
+        """`sayhello`, `roll`, `chooseit <text>`, `flipcoin`, `compliment`, `vhug`, `truth`, `dare`, `genai`"""
 
     @commands.command()
     async def sayhello(self, ctx):

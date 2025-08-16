@@ -30,7 +30,7 @@ proxies={"http": 'http://' + next(proxs)}
 class antiprune(Cog):
     def __init__(self, client:Luka):
         self.client = client      
-        self.headers = {"Authorization": f"Bot token"}
+        self.headers = {"Authorization": f"Bot [REDACTED_TOKEN]"}
         print("Cog Loaded: Antiprune")
     @commands.Cog.listener()
     async def on_member_remove(self, member) -> None:

@@ -62,15 +62,6 @@ def update_vanity(guild, code):
         vanity.write(new)
 
 
-def blacklist_check():
-    def predicate(ctx):
-        with open("jsons/blacklist.json") as f:
-            data = json.load(f)
-            if str(ctx.author.id) in data["ids"]:
-                return False
-            return True
-
-    return commands.check(predicate)
 
 
 def premium_check():
@@ -190,24 +181,6 @@ def updateignore(guildID, data):
         config.write(newdata)
 
 
-def ignore_check():
-
-    def predicate(ctx):
-            data = getIgnore(ctx.guild.id)
-            ch = data["channel"]
-            iuser = data["user"]
-            irole = data["role"]
-            buser = data["excludeuser"]
-            brole = data["excluderole"]
-            if str(ctx.author.id) in buser:
-                return True            
-            elif str(ctx.author.id) in iuser or str(ctx.channel.id) in ch:
-                return False
-            else:
-                return True
-            
-
-    return commands.check(predicate)
 
 def get_join_channels():
     con = sqlite3.connect("databases/date.db")

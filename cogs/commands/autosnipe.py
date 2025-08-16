@@ -2,6 +2,7 @@ import discord
 from discord.ext import commands
 import pymongo
 from utils.Tools import *
+from utils.checks import global_check
 
 class AutoSnipe(commands.Cog):
     def __init__(self, bot):
@@ -16,10 +17,14 @@ class AutoSnipe(commands.Cog):
             result = self.collection.find_one({'_id': str(guild.id)})
             if result is not None:
                 self.autosnipe_settings[str(guild.id)] = result
+                
+    async def cog_check(self, ctx: commands.Context) -> bool:
+        return await global_check(ctx)
+                
 
     @commands.hybrid_group(name="autosnipe", description="autosnipe channel\autosnipe config\autosnipe delete", invoke_without_command=True)
-    @blacklist_check()
-    @ignore_check()
+    
+    
     @commands.has_permissions(administrator=True)
     async def autosnipe(self, ctx):
         """autosnipe channel/autosnipe config/leave delete"""
@@ -27,8 +32,8 @@ class AutoSnipe(commands.Cog):
         await ctx.send(f"Available Commands: `{x}autosnipe channel`")
 
     @autosnipe.command(description='Set-up autosnipe channel.')
-    @blacklist_check()
-    @ignore_check()
+    
+    
     @commands.has_permissions(administrator=True)
     async def channel(self, ctx, channel: discord.TextChannel):
         try:
@@ -39,8 +44,8 @@ class AutoSnipe(commands.Cog):
             return await ctx.send(f"An error occurred {e}")
 
     @autosnipe.command(description='Shows the autosnipe config.', aliases=['show'])
-    @blacklist_check()
-    @ignore_check()
+    
+    
     @commands.has_permissions(administrator=True)
     async def config(self, ctx):
         result = self.collection.find_one({'_id': str(ctx.guild.id)})
@@ -52,8 +57,8 @@ class AutoSnipe(commands.Cog):
             await ctx.send(embed=embed)
 
     @autosnipe.command(description='Reset the autosnipe channel.')
-    @blacklist_check()
-    @ignore_check()
+    
+    
     @commands.has_permissions(administrator=True)
     async def delete(self, ctx: commands.Context):
         try:

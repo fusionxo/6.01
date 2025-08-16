@@ -8,7 +8,7 @@ import typing
 from typing import Optional
 import asyncio
 import pymongo
-
+from utils.checks import global_check
 
 # Replace the connection link, database, and collection names accordingly
 MONGO_LINK = "mongodb+srv://hitman25:luka.123@cluster0.xlxhrlj.mongodb.net/"
@@ -38,7 +38,10 @@ class Owner(commands.Cog):
     def save_blacklist(self):
         with open(self.blacklist_file, 'w') as f:
             json.dump(self.blacklist, f)
-
+            
+            
+    async def cog_check(self, ctx: commands.Context) -> bool:
+        return await global_check(ctx)
 
 # https://cdn.discordapp.com/avatars/974984890959425566/7fedaa654af7ec62b211033852e048d0.webp?size=2048
 

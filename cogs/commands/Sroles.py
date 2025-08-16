@@ -2,12 +2,17 @@ import discord
 from discord.ext import commands
 import json
 from utils.Tools import *
+from utils.checks import global_check
 
 class Sroles(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
         self.role_configs = {}
+        
+    async def cog_check(self, ctx: commands.Context) -> bool:
+        return await global_check(ctx)
 
+        # This part was already correct
         try:
             with open('jsons/roles.json', 'r') as f:
                 self.role_configs = json.load(f)
@@ -16,17 +21,29 @@ class Sroles(commands.Cog):
 
         self.max_roles_per_user = 10
 
+    def help2_custom(self):
+        emoji = '<:dice:1295685592092381235>'
+        label = "Custom Roles"
+        description = "Shows the custom roles commands."
+        return emoji, label, description
+
+    @commands.group()
+    async def __sroles__(self, ctx: commands.Context):
+        """`choose`, `rrole`, `remove`"""
+    # --- End of fix ---
+
     def get_guild_role_config(self, guild_id):
         if guild_id not in self.role_configs:
             self.role_configs[guild_id] = {}
         return self.role_configs[guild_id]
+
 
     def save_role_configs(self):
         with open('jsons/roles.json', 'w') as f:
             json.dump(self.role_configs, f)
 
     @commands.command()
-    @blacklist_check()
+    
     @commands.has_permissions(manage_roles=True)
     async def choose(self, ctx, role_name, role_mention):
         if not role_name or not role_mention:
@@ -55,7 +72,7 @@ class Sroles(commands.Cog):
 
 
     @commands.command()
-    @blacklist_check()
+    
     @commands.has_permissions(manage_roles=True)
     async def crrole(self, ctx, role_name):
         if not role_name:
@@ -77,7 +94,7 @@ class Sroles(commands.Cog):
 
 
     @commands.Cog.listener()
-    @blacklist_check()
+    
     async def on_message(self, message):
         if message.author == self.bot.user:
             return
@@ -117,7 +134,7 @@ class Sroles(commands.Cog):
 
 
     @commands.command()
-    @blacklist_check()
+    
     @commands.has_permissions(manage_roles=True)
     async def remove(self, ctx, role_name: str, member: discord.Member):
         guild_id = str(ctx.guild.id)
@@ -141,3 +158,7 @@ class Sroles(commands.Cog):
             await member.add_roles(role)
             embed = discord.Embed(title="Success", description=f"<:check:1087776909246607360> {member.mention} has been given {role.mention}", color=discord.Color.green())
             await ctx.send(embed=embed)
+
+
+def setup(bot):
+    bot.add_cog(Sroles(bot))

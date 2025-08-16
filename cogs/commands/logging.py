@@ -5,6 +5,7 @@ from pymongo import MongoClient
 import datetime
 import pytz
 from utils import *
+from utils.checks import global_check
 
 
 class Logging(commands.Cog):
@@ -17,13 +18,26 @@ class Logging(commands.Cog):
         self.db = self.cluster["loggings"]
         self.collection = self.db["loggingdata"]
 
+    async def cog_check(self, ctx: commands.Context) -> bool:
+        return await global_check(ctx)
+
+    def help_custom(self):
+		      emoji = '<:logging:1088442287115219087>'
+		      label = "Logging"
+		      description = "Shows the log setup commands."
+		      return emoji, label, description
+
+    @commands.group()
+    async def __Logging__(self, ctx: commands.Context):
+        """`logging` , `logging channel` , `logging config` , `logging delete`"""
+
     @commands.hybrid_group(
         name="logging",
         description="Logging channel\nLogging config\nLogging delete",
         invoke_without_command=True
     )
-    @blacklist_check()
-    @ignore_check()
+    
+    
     @commands.has_permissions(administrator=True)
     async def logging(self, ctx):
         if ctx.subcommand_passed is None:

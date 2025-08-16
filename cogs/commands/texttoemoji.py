@@ -2,6 +2,7 @@ import discord
 from discord.ext.commands import BucketType, cooldown, CommandOnCooldown, CommandInvokeError
 from discord.ext import commands
 from utils.Tools import *
+from utils.checks import global_check
 
 class TextToEmoji(commands.Cog):
     def __init__(self, bot):
@@ -44,11 +45,25 @@ class TextToEmoji(commands.Cog):
             '8': '<:Luka_8:1088203524631953551>',
             '9': '<:Luka_9:1088203529505747004>',
         }
+        
+    async def cog_check(self, ctx: commands.Context) -> bool:
+        return await global_check(ctx)
+        
+    def help2_custom(self):
+		      emoji = '<:puzzle:1087776730137239572>'
+		      label = "TextToEmoji"
+		      description = "Shows the TextToEmoji commands."
+		      return emoji, label, description
+
+    @commands.group()
+    async def __TextToEmoji__(self, ctx: commands.Context):
+        """`texttoemoji`"""
+
 
     @commands.hybrid_command(name='texttoemoji', with_app_command=True, aliases=['tte'])
     @commands.cooldown(1, 5, commands.BucketType.user)
-    @blacklist_check()
-    @ignore_check()
+    
+    
     async def texttoemoji(self, ctx: commands.Context, *, text: str):
         try:
             emoji_text = ''

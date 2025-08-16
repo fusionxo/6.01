@@ -16,6 +16,7 @@ import asyncio
 from pymongo import MongoClient
 import datetime
 from datetime import datetime, timedelta
+from utils.checks import global_check
 
 #14
 #snipe | editsnipe | tickle | kiss | hug | slap | pat | feed | pet | howgay | slots | penis | meme | cat
@@ -75,12 +76,25 @@ class Fun(commands.Cog):
         self.collection = self.db["bdaydata"]
         self.check_birthdays.start()
 
+    async def cog_check(self, ctx: commands.Context) -> bool:
+        return await global_check(ctx)
+
+
+    def help_custom(self):
+		      emoji = '<:fun:1088451095795351672>'
+		      label = "Fun"
+		      description = "Shows the fun commands."
+		      return emoji, label, description
+
+    @commands.group()
+    async def __Fun__(self, ctx: commands.Context):
+        """` tickle` , `kiss` , `hug` , `slap` , `pat` , `feed` , `pet` , `howgay` , `slots` , ` pp` , `meme` , `cat` , `iplookup`, `ship`, `roast`"""
         
 
     @commands.command()
     @commands.has_permissions(administrator=True)
-    @blacklist_check()
-    @ignore_check()
+    
+    
     @premium_check()
     async def bday(self, ctx, action, user: discord.Member, *args):
         if action == "set":
@@ -296,7 +310,7 @@ class Fun(commands.Cog):
 
 
 
-    @blacklist_check()
+    
     @commands.command(help="Tickle mentioned user .",usage="Tickle <member>")
     async def tickle(self, ctx, user: discord.Member = None):
         if user is None:
@@ -311,7 +325,7 @@ class Fun(commands.Cog):
             embed.set_image(url=res['url'])
             embed.set_footer(text=f"{ctx.guild.name}")
             await ctx.send(embed=embed)
-    @blacklist_check()
+    
     @commands.command(help="Kiss mentioned user .",usage="Kiss <member>")
     async def kiss(self, ctx, user: discord.Member = None):
         if user is None:
@@ -328,7 +342,7 @@ class Fun(commands.Cog):
             await ctx.send(embed=embed)
 
 
-    @blacklist_check()            
+                
     @commands.command(help="Hug mentioned user .",usage="Tickle <member>")
     async def hug(self, ctx, user: discord.Member = None):
         if user is None:
@@ -345,7 +359,7 @@ class Fun(commands.Cog):
             await ctx.send(embed=embed)
 
     @commands.command(help="Slap mentioned user .",usage="Slap <member>")
-    @blacklist_check()
+    
     async def slap(self, ctx, user: discord.Member = None):
         if user is None:
             await ctx.send(f"`{ctx.author}` you must mention a user to do that!")
@@ -361,7 +375,7 @@ class Fun(commands.Cog):
             await ctx.send(embed=embed)
 
     @commands.command(help="Pat mentioned user .",usage="Pat <member>")
-    @blacklist_check()
+    
     async def pat(self, ctx, user: discord.Member = None):
         if user is None:
             await ctx.send(f"`{ctx.author}` you must mention a user to do that!")
@@ -377,7 +391,7 @@ class Fun(commands.Cog):
             await ctx.send(embed=embed)
 
     @commands.command(help="Feed mentioned user .",usage="Feed <member>")
-    @blacklist_check()
+    
     async def feed(self, ctx, user: discord.Member = None):
         if user is None:
             await ctx.send(f"`{ctx.author}` you must mention a user to do that!")
@@ -393,7 +407,7 @@ class Fun(commands.Cog):
             await ctx.send(embed=embed)
 
     @commands.command(usage="Pet <member>")
-    @blacklist_check()
+    
     async def pet(self, ctx, user: discord.Member = None):
         if user is None:
             await ctx.send(f"`{ctx.author}` you must mention a user to do that!")
@@ -411,7 +425,7 @@ class Fun(commands.Cog):
 
       
     @commands.command(aliases=['gay'],help="check someone gay percentage",usage="Howgay <person>")
-    @blacklist_check()
+    
     async def howgay(self, ctx, *, person): 
         embed = discord.Embed(color=0x977FD7)
         responses = ['50',
@@ -441,7 +455,7 @@ class Fun(commands.Cog):
             await ctx.send(embed=embed)
 
     @commands.command()
-    @blacklist_check()
+    
     async def slots(self, ctx):
         emojis = "🍎🍊🍐🍋🍉🍇🍓🍒"
         a = random.choice(emojis)
@@ -456,7 +470,7 @@ class Fun(commands.Cog):
             await ctx.send(embed=discord.Embed(title="Slot machine", description=f"{slotmachine} No Matches! You Lost!",color=0x977FD7))
 
     @commands.command(aliases = ['dick'],help="Check someone`s dick`s size .",usage="Dick [member]")
-    @blacklist_check()
+    
     async def penis(self, ctx, user: discord.Member = None):
         if user is None:
             user = ctx.author
@@ -469,7 +483,7 @@ class Fun(commands.Cog):
         await ctx.send(embed=em)
 
     @commands.command(help="give you a meme",usage="meme")
-    @blacklist_check()
+    
     async def meme(self, ctx):
         embed = discord.Embed(title="""Take some memes""",color=0x977FD7)
         async with aiohttp.ClientSession() as cs:
@@ -481,7 +495,7 @@ class Fun(commands.Cog):
                 await ctx.send(embed=embed)
 
     @commands.command(usage="cat")
-    @blacklist_check()
+    
     async def cat(self, ctx):
         embed = discord.Embed(title="""Here's a cat""",color=0x977FD7)
         async with aiohttp.ClientSession() as cs:
@@ -492,7 +506,7 @@ class Fun(commands.Cog):
                 await ctx.send(embed=embed)
 
     @commands.command(name="iplookup", aliases=['ip', 'ipl'],help="shows info about an ip",usage="Iplookup [ip]")
-    @blacklist_check()
+    
     async def iplookup(self, ctx, *, ip):
      async with aiohttp.ClientSession() as a:
        async with a.get(f"http://ipwhois.app/json/{ip}") as b:
@@ -513,3 +527,7 @@ class Fun(commands.Cog):
 					)
           await ctx.send(embed=embed)
 
+
+
+def setup(bot):
+    bot.add_cog(Fun(bot))

@@ -2,7 +2,8 @@ import base64
 import binascii
 import codecs
 import secrets
-
+from utils import *
+from utils.checks import global_check
 from discord.ext import commands
 
 
@@ -10,6 +11,8 @@ class Encryption(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
 
+    async def cog_check(self, ctx: commands.Context) -> bool:
+        return await global_check(ctx)
 
     def help_custom(self):
         emoji = '<:security:1087776669395324940>'

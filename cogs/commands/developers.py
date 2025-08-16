@@ -6,6 +6,7 @@ from utils.Tools import *
 from discord import *
 from utils.config import OWNER_IDS, No_Prefix
 import asyncio
+from utils.checks import global_check
 
 def is_dev():
     def predicate(ctx):

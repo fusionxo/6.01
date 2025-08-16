@@ -30,7 +30,7 @@ proxies={"http": 'http://' + next(proxs)}
 class antichannel(Cog):
     def __init__(self, client: Luka):
         self.client = client      
-        self.headers = {"Authorization": f"Bot token"}
+        self.headers = {"Authorization": f"Bot [REDACTED_TOKEN]"}
         print("Cog Loaded: AntiChannel")
     async def delete(channel: discord.abc.GuildChannel):
       try:

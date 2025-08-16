@@ -3,6 +3,7 @@ from discord.ext import commands
 from pymongo import MongoClient
 import asyncio
 from utils import *
+from utils.checks import global_check
 
 
 # --- MongoDB Connection (as provided) ---
@@ -78,6 +79,19 @@ class EmbedMenuModal(discord.ui.Modal, title="Embed Builder"):
 class Welcome(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
+        
+    async def cog_check(self, ctx: commands.Context) -> bool:
+        return await global_check(ctx)
+        
+    def help_custom(self):
+		      emoji = '<:welcome:1088445113417605150>'
+		      label = "Welcome"
+		      description = "Shows the welcome commands."
+		      return emoji, label, description
+
+    @commands.group()
+    async def __Welcome__(self, ctx: commands.Context):
+        """`welcome` , `welcome enable` , `welcome  disable` , `welcome message` , `welcome emessage` , `welcome channel` , `welcome test `"""
 
     def get_format_kwargs(self, member):
         return {
@@ -146,8 +160,8 @@ class Welcome(commands.Cog):
                     usage="welcome",
                     aliases=["wlc"])
     @commands.cooldown(1, 3, commands.BucketType.user)
-    @blacklist_check()
-    @ignore_check()
+    
+    
     async def welcome(self, ctx):
         embed = discord.Embed(title="Luka | Welcome Commands", color=0x977FD7)
         embed.add_field(
@@ -179,8 +193,8 @@ class Welcome(commands.Cog):
                      aliases=["on"])
     @commands.has_permissions(manage_channels=True)
     @commands.cooldown(1, 5, commands.BucketType.user)
-    @blacklist_check()
-    @ignore_check()
+    
+    
     async def enable(self, ctx):
         guild_id = ctx.guild.id
         collection.update_one({"_id": guild_id}, {"$set": {"enabled": True}}, upsert=True)
@@ -195,8 +209,8 @@ class Welcome(commands.Cog):
                      aliases=["off"])
     @commands.has_permissions(manage_channels=True)
     @commands.cooldown(1, 5, commands.BucketType.user)
-    @blacklist_check()
-    @ignore_check()
+    
+    
     async def disable(self, ctx):
         guild_id = ctx.guild.id
         collection.update_one({"_id": guild_id}, {"$set": {"enabled": False}}, upsert=True)
@@ -209,8 +223,8 @@ class Welcome(commands.Cog):
                      description="Sets the welcome message",
                      usage="welcome message <message>",
                      aliases=["msg"])
-    @blacklist_check()
-    @ignore_check()
+    
+    
     @commands.has_permissions(manage_channels=True)
     @commands.cooldown(1, 5, commands.BucketType.user)
     async def message(self, ctx, *, message):
@@ -227,8 +241,8 @@ class Welcome(commands.Cog):
                      aliases=["chan"])
     @commands.has_permissions(manage_channels=True)
     @commands.cooldown(1, 5, commands.BucketType.user)
-    @blacklist_check()
-    @ignore_check()
+    
+    
     async def channel(self, ctx, channel: discord.TextChannel):
         guild_id = ctx.guild.id
         collection.update_one({"_id": guild_id}, {"$set": {"channel_id": channel.id}}, upsert=True)
@@ -238,8 +252,8 @@ class Welcome(commands.Cog):
             color=0x977FD7))
 
     @welcome.command(name="test", description="Tests the welcome event", usage="welcome test", aliases=["try"])
-    @blacklist_check()
-    @ignore_check()
+    
+    
     @commands.has_permissions(manage_channels=True)
     @commands.cooldown(1, 5, commands.BucketType.user)
     async def test(self, ctx):
@@ -267,8 +281,8 @@ class Welcome(commands.Cog):
     @welcome.command(name="emmsg", description="Interactive embed builder", usage="welcome emmsg", aliases=["emsg"])
     @commands.has_permissions(manage_channels=True)
     @commands.cooldown(1, 5, commands.BucketType.user)
-    @blacklist_check()
-    @ignore_check()
+    
+    
     async def emsg(self, ctx: commands.Context):
         """
         Opens a modal to collect embed details. Best used as a slash command (/emsg).

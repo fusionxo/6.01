@@ -217,8 +217,8 @@
     },
     "742614187003347044": {
         "dm": "False",
-        "AFK": "True",
-        "reason": "tha",
+        "AFK": "False",
+        "reason": null,
         "time": 1734635275,
         "mentions": 0,
         "guild": []

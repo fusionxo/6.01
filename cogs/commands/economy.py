@@ -7,6 +7,8 @@ import json
 import random
 import time
 from typing import Optional
+from utils import *
+from utils.checks import global_check
 
 DB_PATH = "databases/economy.db"
 CURRENCY_NAME = "L-Coins"
@@ -21,6 +23,9 @@ class EconomyManager:
     def __init__(self, db_path):
         self.db_path = db_path
         asyncio.create_task(self.setup_database())
+        
+    async def cog_check(self, ctx: commands.Context) -> bool:
+        return await global_check(ctx)
 
     async def setup_database(self):
         import os

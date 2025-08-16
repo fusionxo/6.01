@@ -55,7 +55,9 @@
         "1049079294137204736": {
             "antiSpam": false,
             "antiLink": false,
-            "whitelisted": [],
+            "whitelisted": [
+                "1077336734863466597"
+            ],
             "punishment": "ban",
             "prefix": "$"
         },

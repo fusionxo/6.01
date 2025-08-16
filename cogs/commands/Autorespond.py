@@ -2,6 +2,7 @@ import discord
 from discord.ext import commands
 import json
 from utils.Tools import *
+from utils.checks import global_check
 
 class Autorespond(commands.Cog):
     def __init__(self, bot):
@@ -9,6 +10,22 @@ class Autorespond(commands.Cog):
         self.autoresponses = {}
         self.max_responses = 5
         self.load_autoresponses()
+        
+    async def cog_check(self, ctx: commands.Context) -> bool:
+        return await global_check(ctx)
+        
+    # --- FIX: Indent this method to be part of the class ---
+    def help2_custom(self):
+		      emoji = '<:audio:1089139281441861764>'
+		      label = "Autorespond"
+		      description = "Shows the autorespond commands."
+		      return emoji, label, description
+
+    @commands.group()
+    async def __autorespond1__(self, ctx: commands.Context):
+        """`autoresponder create`, `autoresponder delete`, `autoresponder config`, `autoresponder edit`"""
+
+        
 
     def load_autoresponses(self):
       try:
@@ -27,8 +44,8 @@ class Autorespond(commands.Cog):
                     description='Shows the autoresponder subcommands.',
                     invoke_without_command=True,
                     aliases=['ar'])
-    @blacklist_check()
-    @ignore_check()
+    
+    
 
     async def _ar(self, ctx: commands.Context):
         if ctx.subcommand_passed is None:
@@ -38,8 +55,8 @@ class Autorespond(commands.Cog):
     @_ar.command(name="create",
                 description='Create some autoresponses.')
     @commands.has_permissions(administrator=True)
-    @blacklist_check()
-    @ignore_check()
+    
+    
 
     async def _create(self, ctx, name, *, message):
         with open("jsons/autor.json", "r") as f:
@@ -103,8 +120,8 @@ class Autorespond(commands.Cog):
     @_ar.command(name="delete",
                 description='Delete a particular autoresponder.')
     @commands.has_permissions(administrator=True)
-    @blacklist_check()
-    @ignore_check()
+    
+    
 
     async def _delete(self, ctx, name):
         with open("jsons/autor.json", "r") as f:
@@ -148,8 +165,8 @@ class Autorespond(commands.Cog):
     @_ar.command(name="config",
                 description='Shows the autoresponder config.')
     @commands.has_permissions(administrator=True)
-    @blacklist_check()
-    @ignore_check()
+    
+    
 
     async def _config(self, ctx):
         with open("jsons/autor.json", "r") as f:
@@ -175,8 +192,8 @@ class Autorespond(commands.Cog):
     @_ar.command(name="edit",
                 description='Edit a particular autoresponder.')
     @commands.has_permissions(administrator=True)
-    @blacklist_check()
-    @ignore_check()
+    
+    
     async def _edit(self, ctx, name, *, message):
         with open("jsons/autor.json", "r") as f:
             autoresponse = json.load(f)

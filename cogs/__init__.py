@@ -24,7 +24,7 @@ from .commands.Vcroles import VCroles
 from .commands.suggestion import Suggestion
 from .commands.autosnipe import AutoSnipe
 from .commands.voicecmds import VoiceCmd
-from .commands.soundboard import soundboard
+from .commands.soundboard import Soundboard
 from .commands.blword import blword
 from .commands.vanitystatus import VanityRoles
 from .commands.ticket import TicketCog
@@ -75,37 +75,6 @@ from .events.ready import ready
 
 
 
-##############33cogs#############
-from .commands.general1 import general1
-from .commands.mod2 import mod1
-from .commands.anti1 import anti1
-from .commands.logging2 import logging1
-from .commands.welcome1 import welcome1
-from .commands.fun1 import fun1
-from .commands.games1 import games1
-from .commands.extra1 import extra1
-from .commands.voicecmds1 import voicecmds1
-from .commands.soundboard1 import soundboard1
-from .commands.ticket1 import ticket1
-from .commands.giveaway1 import giveaway1
-from .commands.starboard1 import starboard1
-from .commands.textoemoji1 import tte1
-from .commands.vanitystatus1 import vanitystatus1
-from .commands.vcroles1 import vcroles1
-from .commands.blword1 import blword1
-from .commands.jtc1 import jtc1
-from .commands.pfps1 import pfps1
-from .commands.automod1 import automod1
-from .commands.tts1 import tts1
-from .commands.autopfp1 import autopfp1
-from .commands.automessages1 import automessages1
-
-
-
-
-
-
-
 
 async def setup(bot: Luka):
   await bot.add_cog(Help(bot))
@@ -126,7 +95,7 @@ async def setup(bot: Luka):
   await bot.add_cog(Suggestion(bot))
   await bot.add_cog(AutoSnipe(bot))
   await bot.add_cog(VoiceCmd(bot))
-  await bot.add_cog(soundboard(bot))
+  await bot.add_cog(Soundboard(bot))
   await bot.add_cog(blword(bot))
   await bot.add_cog(VanityRoles(bot))
   await bot.add_cog(TicketCog(bot))
@@ -151,34 +120,6 @@ async def setup(bot: Luka):
   await bot.add_cog(TimerM(bot))
   #await bot.add_cog(ChordAI(bot))
   await bot.add_cog(Economy(bot))
-
-
-  
-####################
-
-  await bot.add_cog(general1(bot))
-  await bot.add_cog(mod1(bot))
-  await bot.add_cog(anti1(bot))
-  await bot.add_cog(logging1(bot))
-  await bot.add_cog(welcome1(bot))
-  await bot.add_cog(fun1(bot))
-  await bot.add_cog(games1(bot))
-  await bot.add_cog(extra1(bot))
-  await bot.add_cog(voicecmds1(bot))
-  await bot.add_cog(soundboard1(bot))
-  await bot.add_cog(ticket1(bot))
-  await bot.add_cog(giveaway1(bot))
-  await bot.add_cog(starboard1(bot))
-  await bot.add_cog(tte1(bot))
-  await bot.add_cog(vanitystatus1(bot))
-  await bot.add_cog(vcroles1(bot))
-  await bot.add_cog(blword1(bot))
-  await bot.add_cog(jtc1(bot))
-  await bot.add_cog(pfps1(bot))
-  await bot.add_cog(automod1(bot))
-  await bot.add_cog(tts1(bot))
-  await bot.add_cog(autopfp1(bot))
-  await bot.add_cog(automessages1(bot))
 
 
 

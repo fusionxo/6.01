@@ -7,6 +7,8 @@ import datetime
 import random
 import time
 from typing import List, Optional
+from utils import *
+from utils.checks import global_check
 
 DB_PATH = "databases/giveaways.db"
 
@@ -15,6 +17,7 @@ class GiveawayManager:
         self.bot = bot
         self.db_path = DB_PATH
         self.bot.loop.create_task(self.setup_database())
+
 
     async def setup_database(self):
         import os
@@ -226,6 +229,22 @@ class Giveaway(commands.Cog):
         self.bot = bot
         self.manager = GiveawayManager(bot)
         self.giveaway_ender.start()
+
+    async def cog_check(self, ctx: commands.Context) -> bool:
+        return await global_check(ctx)
+
+        
+    def help2_custom(self):
+		      emoji = '<:giftbox:1087776608154304522>'
+		      label = "Giveaway"
+		      description = "Shows the giveaway commands."
+		      return emoji, label, description
+    
+    
+    @commands.group()
+    async def __Giveaway__(self, ctx: commands.Context):
+        """• `gstar`, `greroll <msgid>`, `gend <msgid>` """
+
 
     async def cog_load(self):
         self.bot.add_view(GiveawayView())

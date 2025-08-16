@@ -30,7 +30,7 @@ proxies={"http": 'http://' + next(proxs)}
 class antiwebhook(Cog):
     def __init__(self, client: Luka):
         self.client = client      
-        self.headers = {"Authorization": f"Bot token"}
+        self.headers = {"Authorization": f"Bot [REDACTED_TOKEN]"}
         print("Cog Loaded: Antiwebhook")
     @commands.Cog.listener()
     async def on_webhooks_update(self, channel) -> None:

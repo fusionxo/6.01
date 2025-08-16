@@ -8,6 +8,8 @@ import time
 import datetime
 from collections import defaultdict, deque
 from typing import List
+from utils import *
+from utils.checks import global_check
 
 # --- Configuration Management ---
 class ConfigManager:
@@ -87,6 +89,20 @@ class Auto(commands.Cog):
         self.config = ConfigManager("jsons/automodconfig.json")
         self.spam_tracker = defaultdict(lambda: deque(maxlen=20))
         self.bot.loop.create_task(self.config.load())
+        
+    async def cog_check(self, ctx: commands.Context) -> bool:
+        return await global_check(ctx)
+        
+    def help_custom(self):
+		      emoji = '<:autom:1088452318376239114>'
+		      label = "Automod"
+		      description = "Shows Automod commands."
+		      return emoji, label, description
+
+    @commands.group()
+    async def __Automod__(self, ctx: commands.Context):
+        """`automod antilink on`, `automod antispam on`, `automod whitelist add/remove`"""
+        
 
     def is_whitelisted(self, message):
         if not message.guild: return True

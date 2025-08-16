@@ -1,11 +1,27 @@
 import discord
 from discord.ext import commands
 import json
+from utils import *
+from utils.checks import global_check
+
 
 class VCroles(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
         self.vcroles = self.load_vcroles()
+        
+    async def cog_check(self, ctx: commands.Context) -> bool:
+        return await global_check(ctx)
+        
+    def help2_custom(self):
+		      emoji = '<:soundfull:1087776969627811891>'
+		      label = "VcRoles"
+		      description = "Shows the VcRoles commands."
+		      return emoji, label, description
+
+    @commands.group()
+    async def __VcRoles__(self, ctx: commands.Context):
+        """`vcrole bots add`, `vcrole bots remove`, `vcrole bots`, `vcrole humans add`, `vcrole humans remove`, `vcrole humans`, `vcrole reset`, `vcrole config`, `vcrole`"""
 
     def load_vcroles(self):
         try:

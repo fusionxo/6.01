@@ -2,14 +2,28 @@ import discord
 from discord.ext import commands
 import json
 from utils.Tools import *
+from utils.checks import global_check
 
 class VanityRoles(commands.Cog):
     def __init__(self, client):
         self.client = client
+        
+    async def cog_check(self, ctx: commands.Context) -> bool:
+        return await global_check(ctx)
+        
+    def help2_custom(self):
+		      emoji = '<:love:1089116684046041158>'
+		      label = "VanityStatus"
+		      description = "Shows the VanityStatus commands."
+		      return emoji, label, description
+
+    @commands.group()
+    async def __VanityStatus__(self, ctx: commands.Context):
+        """`vrsetup`, `vrshow`, `vrremove`"""
 
     @commands.hybrid_command(description="Setup vanity roles.", aliases=["vrsetup"])
-    @blacklist_check()
-    @ignore_check()
+    
+    
     @commands.has_permissions(administrator=True)
     async def vr_setup(self, ctx, vanity, role: discord.Role, channel: discord.TextChannel):
         with open("jsons/vanityroles.json", "r") as f:
@@ -25,8 +39,8 @@ class VanityRoles(commands.Cog):
             json.dump(idk, f, indent=4)
 
     @commands.hybrid_command(description="Show vanity roles config.", aliases=["vrshow"])
-    @blacklist_check()
-    @ignore_check()
+    
+    
     @commands.has_permissions(administrator=True)
     async def vr_show(self, ctx):
         with open("jsons/vanityroles.json", "r") as f:
@@ -43,8 +57,8 @@ class VanityRoles(commands.Cog):
             await ctx.reply(embed=embed, mention_author=False)
 
     @commands.command(description="Remove vanity roles.", aliases=["vrremove"])
-    @blacklist_check()
-    @ignore_check()
+    
+    
     @commands.has_permissions(administrator=True)
     async def vr_remove(self, ctx):
         with open("jsons/vanityroles.json", "r") as f:
@@ -90,3 +104,6 @@ class VanityRoles(commands.Cog):
                     except Exception as e:
                         print(e)
 
+
+def setup(bot):
+    bot.add_cog(VanityRoles(bot))

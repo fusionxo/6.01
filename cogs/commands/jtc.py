@@ -4,6 +4,8 @@ from discord import ui
 import asyncio
 import sqlite3
 import traceback
+from utils import *
+from utils.checks import global_check
 
 # --- Helper Functions ---
 
@@ -494,6 +496,20 @@ class Jtc(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
         self.bot.add_view(VoiceControlView(bot))
+        
+    async def cog_check(self, ctx: commands.Context) -> bool:
+        return await global_check(ctx)
+        
+    def help_custom(self):
+		      emoji = '<:automation:1089140152674308126>'
+		      label = "Join To Create"
+		      description = "Shows the log Join To Create commands."
+		      return emoji, label, description
+
+    @commands.group()
+    async def __JoinToCreate__(self, ctx: commands.Context):
+        """• `jtc setupj2c`, `jtc deletej2c`"""
+        
 
     @commands.Cog.listener()
     async def on_voice_state_update(self, member, before, after):

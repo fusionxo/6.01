@@ -1,6 +1,8 @@
 import discord
 from discord.ext import commands
 import google.generativeai as genai
+from utils import *
+from utils.checks import global_check
 
 class GenAI(commands.Cog):
     def __init__(self, bot):
@@ -8,6 +10,9 @@ class GenAI(commands.Cog):
         genai.configure(api_key="AIzaSyBfCnM9UpPVdKuxa3gEoNgrYJhanSIDe4M")
         generation_config = {"temperature": 0.9, "top_p": 1, "top_k": 1, "max_output_tokens": 50000}
         self.model = genai.GenerativeModel("gemini-2.0-flash", generation_config=generation_config)
+        
+    async def cog_check(self, ctx: commands.Context) -> bool:
+        return await global_check(ctx)
 
     @commands.command(description="Ask GenAI to answer a question.")
     async def genai(self, ctx, *, question):

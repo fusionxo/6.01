@@ -2,6 +2,7 @@ import discord
 from discord.ext import commands
 import random
 from utils.Tools import *
+from utils.checks import global_check
 
 
 pfpss = ['https://cdn.discordapp.com/attachments/608711473652563968/1018307916710817842/22EE8237-C6D8-4BDC-8366-596C4D6ED487.gif', 'https://cdn.discordapp.com/attachments/608711478496854019/1018121440714817596/unknown.png', 'https://cdn.discordapp.com/attachments/608711478496854019/1018051616756219916/5dc823c5bb21cdc63dac7dd86ec93d2f.jpg', 'https://cdn.discordapp.com/attachments/608711476219478045/1019191077506396170/a_fe6fbe3cec2fccbff3c71ccb6d0c9f9a.gif', 'https://cdn.discordapp.com/attachments/608711476219478045/1019186587180990514/a_4fbe6403d85f03bcd428ac52a04b1731.gif', 'https://cdn.discordapp.com/attachments/608711476219478045/1018152608860475462/image5.gif', 'https://cdn.discordapp.com/attachments/608711476219478045/1018152606893346816/Gif6.gif', 'https://cdn.discordapp.com/attachments/608711476219478045/1018151757743923341/a_af347fce39d2a0640e672ffbad797a7a.gif', 'https://cdn.discordapp.com/attachments/608711476219478045/1018151756221394944/a_62550197c4ec87e91770a22dd4f45edb-1.gif', 'https://cdn.discordapp.com/attachments/608711476219478045/1018151755273474110/a_67d61390265cb7294137ab700b327755.gif', 'https://cdn.discordapp.com/attachments/608711476219478045/1018151433671032892/a_44dcbf79100c201d91390c78e23fe39e.gif', 'https://cdn.discordapp.com/attachments/608711476219478045/1018151432437899264/a_9e465caa99b2c136ecc6c98a8185c86f.gif', 'https://cdn.discordapp.com/attachments/608711476219478045/1018151431276081202/a_6ea343b4bf2373d38adbc855877754de.gif', 'https://cdn.discordapp.com/attachments/608711474952798221/1018984869424013333/ugur_askimin_ppsi.jpg', 'https://cdn.discordapp.com/attachments/608711474952798221/1018949984843997214/e1240bba6622954599804b94eeea22b0.jpg', 'https://cdn.discordapp.com/attachments/608711473652563968/1019152927220301875/ba90d567d37ae57d41c10ece156e2111.gif', 'https://cdn.discordapp.com/attachments/608711473652563968/1018636127814570064/9de66e99de86f66cbe3d479ef6756e9b.gif', 'https://cdn.discordapp.com/attachments/608711473652563968/1018309211983192184/147367F7-B146-4623-89D7-5E7FD3E633DA.gif', 'https://cdn.discordapp.com/attachments/768864495522283560/1018984139946459196/IMG_20220912_233247.jpg', 'https://cdn.discordapp.com/attachments/768864495522283560/1018983026589450270/2.png', 'https://cdn.discordapp.com/attachments/768864495522283560/1018970085173497946/750f5e44205acea8ed30397cae020fa9.jpg', 'https://cdn.discordapp.com/attachments/768864495522283560/1018955729496969317/a_85480d503d1c0bbe448742f4a2cd83a9.gif', 'https://cdn.discordapp.com/attachments/768864615676903466/1019337978679668786/a_90a2caf6bd7be576a9ba3b4e4ba81810.gif', 'https://cdn.discordapp.com/attachments/768864615676903466/1019336375293706392/menace-santana-menace-santana-gif.gif', 'https://cdn.discordapp.com/attachments/768864615676903466/1019336312739856464/menace-santana-booskap.gif', 'https://cdn.discordapp.com/attachments/768864615676903466/1019336014503874630/menace-santana.gif', 'https://cdn.discordapp.com/attachments/768864615676903466/1019331930384248863/96ebadd862d6eeb5817c28b3472e2dc4.png', 'https://cdn.discordapp.com/attachments/768864495522283560/1019357643141292042/b.gif', 'https://cdn.discordapp.com/attachments/768864495522283560/1019341567066128435/013c579c700043c96583f99a0775ad6b.jpg', 'https://cdn.discordapp.com/attachments/768864495522283560/1019328501154844733/pp_13.jpg', 'https://cdn.discordapp.com/attachments/768864495522283560/1019311556800020500/a0133a1991742ed8e142af3f0c072563.png', 'https://cdn.discordapp.com/attachments/768864495522283560/1019258155298992148/a_5eca60140eccaeec69f2662cbc600400.gif', 'https://cdn.discordapp.com/attachments/768864495522283560/1019726853386272869/edfd38527129a09a90767ae23205ea73.jpg', 'https://cdn.discordapp.com/attachments/768864495522283560/1019686929572315166/c62590c1756680060e7c38011cd704b5.jpg', 'https://cdn.discordapp.com/attachments/768864495522283560/1019686282747719750/a_c2178733158e5e80a0ba80b10d53501a.gif']
@@ -19,13 +20,23 @@ banners = ['https://cdn.discordapp.com/attachments/857714045251878972/1018592538
 class pfps(commands.Cog, name="Pfps"):
     def __init__(self, bot):
         self.bot = bot
-        self.tasks = []   
-
-
+        self.tasks = []
+        
+    async def cog_check(self, ctx: commands.Context) -> bool:
+        return await global_check(ctx)
+        
+    def help_custom(self):
+		      emoji = '<:user:1087776942679412856>'
+		      label = "Pfps"
+		      description = "Shows the Pfps commands."
+		      return emoji, label, description
+    @commands.group()
+    async def __Pfps__(self, ctx: commands.Context):
+        """• `anime`, `couples`, `boys`, `girls`, `pic`, `` """
 
     @commands.hybrid_command()
-    @blacklist_check()
-    @ignore_check()    
+    
+        
     async def anime(self, ctx):
         button = discord.ui.Button(label='Gifs', style=discord.ButtonStyle.primary)
         button1 = discord.ui.Button(label='Pic', style=discord.ButtonStyle.success)
@@ -48,8 +59,8 @@ class pfps(commands.Cog, name="Pfps"):
         await ctx.reply(embed=embed, view=view)
 
     @commands.hybrid_command()
-    @blacklist_check()
-    @ignore_check()    
+    
+        
     async def couples(self, ctx):
         button = discord.ui.Button(label='Couples Gifs', style=discord.ButtonStyle.primary)
         button1 = discord.ui.Button(label='Couples Pics', style=discord.ButtonStyle.success)
@@ -72,8 +83,8 @@ class pfps(commands.Cog, name="Pfps"):
         await ctx.reply(embed=embed, view=view)
 
     @commands.hybrid_command()
-    @blacklist_check()
-    @ignore_check()    
+    
+        
     async def boys(self, ctx):
         button = discord.ui.Button(label='Gifs', style=discord.ButtonStyle.primary)
         button1 = discord.ui.Button(label='Pics', style=discord.ButtonStyle.success)
@@ -96,8 +107,8 @@ class pfps(commands.Cog, name="Pfps"):
         await ctx.reply(embed=embed, view=view)
 
     @commands.hybrid_command()
-    @blacklist_check()
-    @ignore_check()    
+    
+        
     async def girls(self, ctx):
         button = discord.ui.Button(label='Gifs', style=discord.ButtonStyle.primary)
         button1 = discord.ui.Button(label='Pic', style=discord.ButtonStyle.success)
@@ -120,8 +131,8 @@ class pfps(commands.Cog, name="Pfps"):
         await ctx.reply(embed=embed, view=view)
 
     @commands.hybrid_command()
-    @blacklist_check()
-    @ignore_check()    
+    
+        
     async def pic(self, ctx):
         button = discord.ui.Button(label='Pfps', style=discord.ButtonStyle.primary)
         button1 = discord.ui.Button(label='Banners', style=discord.ButtonStyle.success)
@@ -142,3 +153,8 @@ class pfps(commands.Cog, name="Pfps"):
         button.callback = button_callback
         button1.callback = button1_callback
         await ctx.reply(embed=embed, view=view)
+
+
+
+async def setup(bot):
+    await bot.add_cog(pfps(bot))

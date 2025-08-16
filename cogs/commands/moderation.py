@@ -20,6 +20,7 @@ from core import Cog, Luka, Context
 import json
 from typing import Optional
 from datetime import timedelta
+from utils.checks import global_check
 
 class Moderation(commands.Cog):
     def __init__(self, bot):
@@ -27,6 +28,19 @@ class Moderation(commands.Cog):
         self.tasks = []
         with open("jsons/moderation.json", "r") as f:
             self.moderation_data = json.load(f)
+            
+    async def cog_check(self, ctx: commands.Context) -> bool:
+        return await global_check(ctx)
+            
+    def help_custom(self):
+		      emoji = '<:usershield:1087776624486920294>'
+		      label = "Moderation"
+		      description = "Shows the moderation commands."
+		      return emoji, label, description
+
+    @commands.group()
+    async def __Moderation__(self, ctx: commands.Context):
+        """`menable`, `mdisable`, `softban` , `purge` , `purge contains` , `purge startswith` , `purge invites` , `purge user` , `mute` , `unmute` , `kick` , `roleallhumans` , `roleallbots` , `removeallhumans` , `removeallbots` , `warn` , `ban` , `unban` , `clone` , `nick` , `slowmode` ,  `unslowmode` , `clear` , `clear all` , `clear bots` , `clear embeds` , `clear files` , `clear mentions` , `clear images` , `clear contains` , `clear reactions` , `nuke` , `lock` , `unlock`, `hide`, `unhide`, `lockall`, `unlockall`, `hideall`, `unhideall`"""
         
     def convert(self, time):
         pos = ["s","m","h","d"]
@@ -93,8 +107,8 @@ class Moderation(commands.Cog):
     # ...
 
     @commands.hybrid_command(name="prefix", aliases=["setprefix","prefixset"], help="Allows you to change prefix of the bot for this server")
-    @blacklist_check()
-    @ignore_check()
+    
+    
     @commands.has_permissions(administrator=True)
     @commands.cooldown(1, 10, commands.BucketType.user)
     @commands.max_concurrency(1, per=commands.BucketType.default, wait=False)
@@ -108,8 +122,8 @@ class Moderation(commands.Cog):
 
 
     @commands.command(aliases=['sb'], help="Literally trolling command or you can use to clear all messages by the user.", usage="softban <member>")
-    @blacklist_check()
-    @ignore_check()
+    
+    
     @commands.guild_only()
     @commands.has_permissions(ban_members=True)
     @commands.cooldown(1, 5, commands.BucketType.user)
@@ -142,8 +156,8 @@ class Moderation(commands.Cog):
 
 
     @commands.group(invoke_without_command=True, help="Clears the messages", usage="purge <amount>")
-    @blacklist_check()
-    @ignore_check()
+    
+    
     @commands.has_guild_permissions(manage_messages=True)
     async def purge(self, ctx, amount: int = 10):
         moderation_enabled = self.moderation_data.get(str(ctx.guild.id), False)
@@ -156,8 +170,8 @@ class Moderation(commands.Cog):
         return await ctx.send(f"**<:check:1087776909246607360> Deleted {len(deleted)-1} message(s)**")
 
     @purge.command(help="Clears the messages starts with the given letters", usage="purge startswith <text>")
-    @blacklist_check()
-    @ignore_check()
+    
+    
     @commands.has_guild_permissions(manage_messages=True)
     async def startswith(self, ctx, key, amount: int = 10):
         moderation_enabled = self.moderation_data.get(str(ctx.guild.id), False)
@@ -184,8 +198,8 @@ class Moderation(commands.Cog):
         return await ctx.send(f"**<:check:1087776909246607360> Deleted {len(deleted)}/{amount} message(s) which started with the given keyword**")
 
     @purge.command(help="Clears the messages ends with the given letter",usage="purge endswith <text>")
-    @blacklist_check()
-    @ignore_check()
+    
+    
     @commands.has_guild_permissions(manage_messages=True)
     async def endswith(self, ctx, key, amount: int = 10):
         moderation_enabled = self.moderation_data.get(str(ctx.guild.id), False)
@@ -210,8 +224,8 @@ class Moderation(commands.Cog):
         return await ctx.send(f"**<:check:1087776909246607360> Deleted {len(deleted)}/{amount} message(s) which ended with the given keyword**")
 
     @purge.command(help="Clears the messages contains with the given argument",usage="purge contains <message>")
-    @blacklist_check()
-    @ignore_check()
+    
+    
     @commands.has_guild_permissions(manage_messages=True)
     async def contains(self, ctx, key, amount: int = 10):
         moderation_enabled = self.moderation_data.get(str(ctx.guild.id), False)
@@ -236,8 +250,8 @@ class Moderation(commands.Cog):
         return await ctx.send(f"**<:check:1087776909246607360> Deleted {len(deleted)}/{amount} message(s) which contained the given keyword**")
 
     @purge.command(help="Clears the messages of the given user",usage="purge <user>")
-    @blacklist_check()
-    @ignore_check()
+    
+    
     @commands.has_guild_permissions(manage_messages=True)
     async def user(self, ctx, user: discord.Member, amount: int = 10):
         moderation_enabled = self.moderation_data.get(str(ctx.guild.id), False)
@@ -262,8 +276,8 @@ class Moderation(commands.Cog):
         return await ctx.send(f"**<:check:1087776909246607360> Deleted {len(deleted)}/{amount} message(s) which were sent by the mentioned user**")
 
     @purge.command(help="Clears the messages containing invite links",usage="purge invites")
-    @blacklist_check()
-    @ignore_check()
+    
+    
     @commands.has_guild_permissions(manage_messages=True)
     async def invites(self, ctx, amount: int = 10):
         moderation_enabled = self.moderation_data.get(str(ctx.guild.id), False)
@@ -348,8 +362,8 @@ class Moderation(commands.Cog):
 
 
     @commands.command(aliases=['k'], help="Someone is disregarding the rules - take swift action and kick them from the server as a consequence.", usage="kick <member>")
-    @blacklist_check()
-    @ignore_check()
+    
+    
     @commands.has_permissions(kick_members=True)
     async def kick(self, ctx: commands.Context, member: discord.Member, *, reason=None):
         moderation_enabled = self.moderation_data.get(str(ctx.guild.id), False)
@@ -381,8 +395,8 @@ class Moderation(commands.Cog):
 
   
     @commands.command(aliases=['w'],help="To warn a specific user.",usage="warn <member>")
-    @blacklist_check()
-    @ignore_check()
+    
+    
     @commands.has_permissions(kick_members=True)
     async def warn(self, ctx, member: discord.Member, * , reason="No Reason Provided!"):
         moderation_enabled = self.moderation_data.get(str(ctx.guild.id), False)
@@ -397,8 +411,8 @@ class Moderation(commands.Cog):
 
 
     @commands.command(name='ban', help="Ban a user from the server, either by mentioning them or by providing their user ID.", usage="ban [member or user_id] [reason]")
-    @blacklist_check()
-    @ignore_check()
+    
+    
     @commands.has_permissions(ban_members=True)
     async def ban(self, ctx: commands.Context, member_or_id: str, *, reason=None):
         moderation_enabled = self.moderation_data.get(str(ctx.guild.id), False)
@@ -490,8 +504,8 @@ class Moderation(commands.Cog):
 
     
     @commands.command(help="If someone realizes his mistake you should unban him",usage="unban [user]")
-    @blacklist_check()
-    @ignore_check()
+    
+    
     @commands.has_permissions(ban_members=True)
     async def unban(self, ctx, id: int):
         moderation_enabled = self.moderation_data.get(str(ctx.guild.id), False)
@@ -505,8 +519,8 @@ class Moderation(commands.Cog):
         await ctx.send(embed=hacker)
 
     @commands.command(help="Clones a channel .")
-    @blacklist_check()
-    @ignore_check()
+    
+    
     @commands.has_permissions(manage_channels=True)
     async def clone(self, ctx, channel: discord.TextChannel):
         moderation_enabled = self.moderation_data.get(str(ctx.guild.id), False)
@@ -523,8 +537,8 @@ class Moderation(commands.Cog):
         
                           
     @commands.command(aliases=['nick'],help="To change someone's nickname.",usage="nick [member]")
-    @blacklist_check()
-    @ignore_check()
+    
+    
     @commands.has_permissions(manage_nicknames=True)
     async def changenickname(self, ctx, member: discord.Member, * , nick):
         moderation_enabled = self.moderation_data.get(str(ctx.guild.id), False)
@@ -539,8 +553,8 @@ class Moderation(commands.Cog):
 
   
     @commands.group(aliases=["c"],invoke_without_command=True,help="Clears the messages")
-    @blacklist_check()
-    @ignore_check()
+    
+    
     @commands.guild_only()
     @commands.max_concurrency(1, per=commands.BucketType.guild)
     
@@ -577,8 +591,8 @@ class Moderation(commands.Cog):
             await ctx.send(embed= discord.Embed(description=f" Successfully removed {deleted} message{'' if deleted == 1 else 's'}.", color=0x977FD7, delete_after=3))
 
     @clear.command(aliases=["e"])
-    @blacklist_check()
-    @ignore_check()
+    
+    
     @commands.has_permissions(manage_messages=True)
     
     async def embeds(self, ctx, search=1000):
@@ -590,8 +604,8 @@ class Moderation(commands.Cog):
         await self.do_removal(ctx, search, lambda e: len(e.embeds))
 
     @clear.command(aliases=["f"])
-    @blacklist_check()
-    @ignore_check()
+    
+    
     @commands.has_permissions(manage_messages=True)
     
     async def files(self, ctx, search=1000):
@@ -603,8 +617,8 @@ class Moderation(commands.Cog):
         await self.do_removal(ctx, search, lambda e: len(e.attachments))
 
     @clear.command(aliases=["m"])
-    @blacklist_check()
-    @ignore_check()
+    
+    
     @commands.has_permissions(manage_messages=True)
     
     async def mentions(self, ctx, search=1000):
@@ -616,8 +630,8 @@ class Moderation(commands.Cog):
         await self.do_removal(ctx, search, lambda e: len(e.mentions) or len(e.role_mentions))
 
     @clear.command(aliases=["i"])
-    @blacklist_check()
-    @ignore_check()
+    
+    
     @commands.has_permissions(manage_messages=True)
     
     
@@ -630,8 +644,8 @@ class Moderation(commands.Cog):
         await self.do_removal(ctx, search, lambda e: len(e.embeds) or len(e.attachments))
 
     @clear.command(name="all")
-    @blacklist_check()
-    @ignore_check()    
+    
+        
     
     async def _remove_all(self, ctx, search=1000):
         moderation_enabled = self.moderation_data.get(str(ctx.guild.id), False)
@@ -642,8 +656,8 @@ class Moderation(commands.Cog):
         await self.do_removal(ctx, search, lambda e: True)
 
     @clear.command(aliases=["co"])
-    @blacklist_check()
-    @ignore_check()
+    
+    
     @commands.has_permissions(manage_messages=True)  
     
     async def contains(self, ctx, *, substr: str):
@@ -660,8 +674,8 @@ class Moderation(commands.Cog):
             await self.do_removal(ctx, 1000, lambda e: substr in e.content)
 
     @clear.command(name="bots", aliases=["b"])
-    @blacklist_check()
-    @ignore_check()
+    
+    
     @commands.has_permissions(manage_messages=True)
     
     
@@ -680,8 +694,8 @@ class Moderation(commands.Cog):
         await self.do_removal(ctx, search, predicate)
 
     @clear.command(name="emojis", aliases=["em"])
-    @blacklist_check()
-    @ignore_check()
+    
+    
     @commands.has_permissions(manage_messages=True)
     
     
@@ -699,8 +713,8 @@ class Moderation(commands.Cog):
         await self.do_removal(ctx, search, predicate)
         
     @clear.command(name="reactions", aliases=["r"])
-    @blacklist_check()
-    @ignore_check()
+    
+    
     @commands.has_permissions(manage_messages=True)
     
     
@@ -726,8 +740,8 @@ class Moderation(commands.Cog):
     @commands.command()
     @commands.has_permissions(manage_channels=True)
     @commands.cooldown(1, 10, commands.BucketType.guild)
-    @blacklist_check()
-    @ignore_check()
+    
+    
     async def nuke(self, ctx, channels: discord.TextChannel = None):
         channels = channels or ctx.channel
 
@@ -756,8 +770,8 @@ class Moderation(commands.Cog):
 
 
     @commands.command(help="Locks down a channel", usage="lock <channel> <reason>", aliases=["lockdown"])
-    @blacklist_check()
-    @ignore_check()
+    
+    
     @commands.cooldown(1, 2, commands.BucketType.user)
     @commands.has_permissions(manage_channels=True)
     async def lock(self, ctx, channel: discord.TextChannel = None, *, reason=None):
@@ -785,8 +799,8 @@ class Moderation(commands.Cog):
             pass
 
     @commands.command(help="Unlocks a channel", usage="unlock <channel> <reason>", aliases=["unlockdown"])
-    @blacklist_check()
-    @ignore_check()
+    
+    
     @commands.cooldown(1, 2, commands.BucketType.user)
     @commands.has_permissions(manage_channels=True)
     async def unlock(self, ctx, channel: discord.TextChannel = None, *, reason=None):
@@ -927,8 +941,8 @@ class Moderation(commands.Cog):
                       help="Changes the slowmode",
                       usage="slowmode [seconds]",
                       aliases=["slow"])
-    @blacklist_check()
-    @ignore_check()
+    
+    
     @commands.cooldown(1, 2, commands.BucketType.user)
     @commands.has_permissions(manage_messages=True)
     async def slowmode(self, ctx, seconds: int = 0):
@@ -959,8 +973,8 @@ class Moderation(commands.Cog):
                       help="Disables slowmode",
                       usage="unslowmode",
                       aliases=["unslow"])
-    @blacklist_check()
-    @ignore_check()
+    
+    
     @commands.cooldown(1, 2, commands.BucketType.user)
     @commands.has_permissions(manage_messages=True)
     async def unslowmode(self, ctx):
@@ -977,3 +991,6 @@ class Moderation(commands.Cog):
  
 
 
+
+def setup(bot):
+    bot.add_cog(Moderation(bot))

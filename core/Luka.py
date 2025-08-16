@@ -10,6 +10,7 @@ from utils.config import OWNER_IDS, EXTENSIONS, No_Prefix
 from utils import getConfig, updateConfig
 from .Context import Context
 import pymongo
+from utils.checks import global_check 
 
 
 # Replace the connection link, database, and collection names accordingly
@@ -25,7 +26,7 @@ collection = db[COLLECTION_NAME]
  
 class Luka(commands.AutoShardedBot):
     def __init__(self, *arg, **kwargs):
-      self.topgg_headers = {"Authorization": "token"}
+      self.topgg_headers = {"Authorization": "[REDACTED_TOKEN]"}
       intents = discord.Intents.all()
       super().__init__(command_prefix=self.get_prefix,
                          case_insensitive=True,
@@ -33,7 +34,9 @@ class Luka(commands.AutoShardedBot):
                          status=discord.Status.dnd,
                          strip_after_prefix=True,
                          owner_ids=OWNER_IDS,                        allowed_mentions=discord.AllowedMentions(everyone=False, replied_user=False,roles=False),sync_commands_debug= True, sync_commands=True,shard_count=1)
-  
+      self.add_check(global_check)
+
+
     async def on_ready(self):
         print("Connected as {}".format(self.user))
 

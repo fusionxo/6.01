@@ -4,6 +4,8 @@ import json
 import os
 from datetime import datetime, timedelta
 import re
+from utils import *
+from utils.checks import global_check
 
 class TimerM(commands.Cog):
     MIN_INTERVAL = timedelta(minutes=10)  # Minimum interval of 10 minutes
@@ -16,6 +18,19 @@ class TimerM(commands.Cog):
         self.auto_messages = {}
         self.load_data()
         self.auto_message_task.start()
+        
+    async def cog_check(self, ctx: commands.Context) -> bool:
+        return await global_check(ctx)
+        
+    def help2_custom(self):
+		      emoji = '<:puzzle:1087776730137239572>'
+		      label = "AutoMessages"
+		      description = "Shows the AutoMessages commands."
+		      return emoji, label, description
+
+    @commands.group()
+    async def __AutoMessages__(self, ctx: commands.Context):
+        """`am add <channel> <interval> <true/false> <message>`, `am remove <channel>`, `am view <channel>`, `am list`"""
 
     def load_data(self):
         """Load auto messages from JSON file."""

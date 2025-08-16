@@ -47,8 +47,8 @@ db = cluster["note"]
 collection = db["notedata"]
 
 class Extra(commands.Cog):
-    VERSION = "6.0.0"
-    LATEST_RELEASE = "2024-10-20"
+    VERSION = "7.0.0"
+    LATEST_RELEASE = "2025-07-30"
     def __init__(self, bot):
         self.bot = bot
         self.connection = pymongo.MongoClient(
@@ -251,8 +251,8 @@ class Extra(commands.Cog):
         
   
     @commands.hybrid_group(description='Get Luka invite link', aliases=[("inv")])
-    @blacklist_check()
-    @ignore_check()  
+    
+    
     async def invite(self, ctx):
         guild = ctx.guild
     
@@ -293,8 +293,8 @@ class Extra(commands.Cog):
       
 
     @commands.cooldown(1, 60, commands.BucketType.user)
-    @blacklist_check()
-    @ignore_check()
+    
+    
     @commands.hybrid_command(description='Shows the bot information.', with_app_command=True, name="info", aliases=['botinfo', 'bi'])
     @commands.guild_only()
     async def _info(self, ctx):
@@ -378,123 +378,133 @@ Guilds Playing Music :: {music_guilds}```""")
         await ctx.send(embed=embed)
 
 
-
-
-
-
-    @commands.command(name="serverinfo",
-                             aliases=["sinfo", "si"],
-                             with_app_command=True)
-    @blacklist_check()
-    @ignore_check()
+    @commands.command(name="serverinfo", aliases=["sinfo", "si"], with_app_command=True)
     async def serverinfo(self, ctx: commands.Context):
-        c_at = int(ctx.guild.created_at.timestamp())
-        nsfw_level = ''
-        if ctx.guild.nsfw_level.name == 'default':
-            nsfw_level = 'Default'
-        if ctx.guild.nsfw_level.name == 'explicit':
-            nsfw_level = 'Explicit'
-        if ctx.guild.nsfw_level.name == 'safe':
-            nsfw_level = 'Safe'
-        if ctx.guild.nsfw_level.name == 'age_restricted':
-            nsfw_level = 'Age Restricted'
+            c_at = int(ctx.guild.created_at.timestamp())
+            nsfw_level = ''
+            if ctx.guild.nsfw_level.name == 'default':
+                nsfw_level = 'Default'
+            if ctx.guild.nsfw_level.name == 'explicit':
+                nsfw_level = 'Explicit'
+            if ctx.guild.nsfw_level.name == 'safe':
+                nsfw_level = 'Safe'
+            if ctx.guild.nsfw_level.name == 'age_restricted':
+                nsfw_level = 'Age Restricted'
 
-        guild: discord.Guild = ctx.guild
-        t_emojis = len(guild.emojis)
-        t_stickers = len(guild.stickers)
-        total_emojis = t_emojis + t_stickers
+            guild: discord.Guild = ctx.guild
+            t_emojis = len(guild.emojis)
+            t_stickers = len(guild.stickers)
+            total_emojis = t_emojis + t_stickers
 
-        embed = discord.Embed(color=0x2f3136).set_author(
-            name=f"{guild.name}'s Information",
-            icon_url=guild.me.display_avatar.url
-            if guild.icon is None else guild.icon.url).set_footer(
-                text=f"Requested By {ctx.author}",
-                icon_url=ctx.author.avatar.url
-                if ctx.author.avatar else ctx.author.default_avatar.url)
-        if guild.icon is not None:
-            embed.set_thumbnail(url=guild.icon.url)
-            embed.timestamp = discord.utils.utcnow()
+            embed = discord.Embed(color=0x2f3136).set_author(
+                name=f"{guild.name}'s Information",
+                icon_url=guild.me.display_avatar.url
+                if guild.icon is None else guild.icon.url).set_footer(
+                    text=f"Requested By {ctx.author}",
+                    icon_url=ctx.author.avatar.url
+                    if ctx.author.avatar else ctx.author.default_avatar.url)
+            if guild.icon is not None:
+                embed.set_thumbnail(url=guild.icon.url)
+                embed.timestamp = discord.utils.utcnow()
 
-        for r in ctx.guild.roles:
-            if len(ctx.guild.roles) < 1:
+            # Updated role handling to prevent exceeding character limits
+            roles = [role.mention for role in guild.roles[1:]]
+            roles.reverse()
+            
+            roless = ""
+            if not roles:
                 roless = "None"
             else:
-                if len(ctx.guild.roles) < 50:
-                    roless = " • ".join(
-                        [role.mention for role in ctx.guild.roles[1:][::-1]])
-                else:
-                    if len(ctx.guild.roles) > 50:
-                        roless = "Too many roles to show here."
-        embed.add_field(
-            name="**__About__**",
-            value=
-            f"**Name : ** {guild.name}\n**ID :** {guild.id}\n**Owner <:OwnerIcon:1040661621174976563> :** {guild.owner} (<@{guild.owner_id}>)\n**Created At : ** <t:{c_at}:F>\n**Members :** {len(guild.members)}",
-            inline=False)
+                role_mentions = []
+                current_length = 0
+                limit = 900  # Safe limit to leave space for "and X more..."
 
-        embed.add_field(
-            name="**__Extras__**",
-            value=
-            f"""**Verification Level :** {str(guild.verification_level).title()}\n**AFK Channel :** {ctx.guild.afk_channel}\n**AFK Timeout :** {str(ctx.guild.afk_timeout / 60)}\n**System Channel :** {"None" if guild.system_channel is None else guild.system_channel.mention}\n**NSFW level :** {nsfw_level}\n**Explicit Content Filter :** {guild.explicit_content_filter.name}\n**Max Talk Bitrate :** {int(guild.bitrate_limit)} kbps""",
-            inline=False)
+                for r in roles:
+                    # Add length of mention and separator " • "
+                    if current_length + len(r) + 3 > limit:
+                        break
+                    role_mentions.append(r)
+                    current_length += len(r) + 3
+                
+                roless = " • ".join(role_mentions)
+                
+                remaining_count = len(roles) - len(role_mentions)
+                if remaining_count > 0:
+                    roless += f" **• and {remaining_count} more...**"
 
-        embed.add_field(name="**__Description__**",
-                        value=f"""{guild.description}""",
-                        inline=False)
-        if guild.features:
+            # A final fallback, just in case
+            if len(roless) > 1024:
+                roless = "Too many roles to show here."
+
+
             embed.add_field(
-                name="**__Features__**",
-                value="\n".join([
-                    f"<:check:1087776909246607360> : {feature.replace('_',' ').title()}"
-                    for feature in guild.features
-                ]))
+                name="**__About__**",
+                value=
+                f"**Name : ** {guild.name}\n**ID :** {guild.id}\n**Owner <:OwnerIcon:1040661621174976563> :** {guild.owner} (<@{guild.owner_id}>)\n**Created At : ** <t:{c_at}:F>\n**Members :** {len(guild.members)}",
+                inline=False)
 
-        embed.add_field(name="**__Members__**",
-                        value=f"""
-Members : {len(guild.members)}
-Humans : {len(list(filter(lambda m: not m.bot, guild.members)))}
-Bots : {len(list(filter(lambda m: m.bot, guild.members)))}
-            """,
-                        inline=False)
+            embed.add_field(
+                name="**__Extras__**",
+                value=
+                f"""**Verification Level :** {str(guild.verification_level).title()}\n**AFK Channel :** {ctx.guild.afk_channel}\n**AFK Timeout :** {str(ctx.guild.afk_timeout / 60)}\n**System Channel :** {"None" if guild.system_channel is None else guild.system_channel.mention}\n**NSFW level :** {nsfw_level}\n**Explicit Content Filter :** {guild.explicit_content_filter.name}\n**Max Talk Bitrate :** {int(guild.bitrate_limit)} kbps""",
+                inline=False)
 
-        embed.add_field(name="**__Channels__**",
-                        value=f"""
-Categories : {len(guild.categories)}
-Text Channels : {len(guild.text_channels)}
-Voice Channels : {len(guild.voice_channels)}
-Threads : {len(guild.threads)}
-            """,
-                        inline=False)
+            embed.add_field(name="**__Description__**",
+                            value=f"""{guild.description}""",
+                            inline=False)
+            if guild.features:
+                embed.add_field(
+                    name="**__Features__**",
+                    value="\n".join([
+                        f"<:check:1087776909246607360> : {feature.replace('_',' ').title()}"
+                        for feature in guild.features
+                    ]))
 
-        embed.add_field(name="**__Emoji Info__**",
-                        value=f"""
-**Regular Emojis :** {t_emojis}
-**Stickers :** {t_stickers}
-**Total Emoji/Stickers :** {total_emojis}
-             """,
-                        inline=False)
+            embed.add_field(name="**__Members__**",
+                            value=f"""
+    Members : {len(guild.members)}
+    Humans : {len(list(filter(lambda m: not m.bot, guild.members)))}
+    Bots : {len(list(filter(lambda m: m.bot, guild.members)))}
+                """,
+                            inline=False)
 
-        booster_role = guild.premium_subscriber_role
-        booster_role_mention = f"<@&{booster_role.id}>" if booster_role is not None else "Not set"
+            embed.add_field(name="**__Channels__**",
+                            value=f"""
+    Categories : {len(guild.categories)}
+    Text Channels : {len(guild.text_channels)}
+    Voice Channels : {len(guild.voice_channels)}
+    Threads : {len(guild.threads)}
+                """,
+                            inline=False)
 
-        embed.add_field(
-            name="**__Boost Status__**",
-            value=f"Level: {guild.premium_tier} [<a:NITRO:1040662466998325309> {guild.premium_subscription_count} Boosts]\nBooster Role: {booster_role_mention}",
-            inline=False)
+            embed.add_field(name="**__Emoji Info__**",
+                            value=f"""
+    **Regular Emojis :** {t_emojis}
+    **Stickers :** {t_stickers}
+    **Total Emoji/Stickers :** {total_emojis}
+                """,
+                            inline=False)
 
-        embed.add_field(name=f"**__Server Roles [ {len(guild.roles)} ]__**",
-                        value=f"{roless}",
-                        inline=False)
+            booster_role = guild.premium_subscriber_role
+            booster_role_mention = f"<@&{booster_role.id}>" if booster_role is not None else "Not set"
 
-        if guild.banner is not None:
-            embed.set_image(url=guild.banner.url)
-        return await ctx.reply(embed=embed)
+            embed.add_field(
+                name="**__Boost Status__**",
+                value=f"Level: {guild.premium_tier} [<a:NITRO:1040662466998325309> {guild.premium_subscription_count} Boosts]\nBooster Role: {booster_role_mention}",
+                inline=False)
 
+            embed.add_field(name=f"**__Server Roles [ {len(guild.roles)} ]__**",
+                            value=f"{roless}",
+                            inline=False)
 
+            if guild.banner is not None:
+                embed.set_image(url=guild.banner.url)
+            return await ctx.reply(embed=embed)
 
   
 
-    @blacklist_check()
-    @ignore_check()
+    
+    
     @commands.hybrid_command(name="userinfo",
                              aliases=["whois", "ui"],
                              usage="Userinfo [user]",with_app_command = True)
@@ -643,8 +653,8 @@ Threads : {len(guild.threads)}
 
   
     @commands.hybrid_command(description='Shows information of a role.', help="Shows you all information about a role.",usage="Roleinfo <role>")
-    @blacklist_check()
-    @ignore_check()
+    
+    
     async def roleinfo(self, ctx: commands.Context, *, role: discord.Role):
         """Get information about a role"""
         content = discord.Embed(title=f"@{role.name} | #{role.id}")
@@ -685,8 +695,8 @@ Threads : {len(guild.threads)}
 
 
 
-    @blacklist_check()
-    @ignore_check()
+    
+    
     @commands.group(
                       description="Shows users status",
                       usage="status <member>")
@@ -713,8 +723,8 @@ Threads : {len(guild.threads)}
     @commands.group(
                       help="Shows emoji syntax",
                       usage="emoji <emoji>")
-    @blacklist_check()
-    @ignore_check()
+    
+    
     async def emoji(self, ctx, emoji: discord.Emoji):
         return await ctx.send(
             embed=discord.Embed(title="**<a:green_fire:1016313318031491092> | emoji**",
@@ -725,8 +735,8 @@ Threads : {len(guild.threads)}
     @commands.group(
                       help="Shows user syntax",
                       usage="user [user]")
-    @blacklist_check()
-    @ignore_check()
+    
+    
     async def user(self, ctx, user: discord.Member = None):
         return await ctx.send(
             embed=discord.Embed(title="user",
@@ -737,8 +747,8 @@ Threads : {len(guild.threads)}
     @commands.group(
                       help="Shows role syntax",
                       usage="roleid <role>")
-    @blacklist_check()
-    @ignore_check()
+    
+    
     async def roleid(self, ctx, role: discord.Role):
         return await ctx.send(
             embed=discord.Embed(title="role",
@@ -749,8 +759,8 @@ Threads : {len(guild.threads)}
     @commands.group(
                       help="Shows channel syntax",
                       usage="channel <channel>")
-    @blacklist_check()
-    @ignore_check()
+    
+    
     async def channel(self, ctx, channel: discord.TextChannel):
         return await ctx.send(
             embed=discord.Embed(title="channel",
@@ -762,8 +772,8 @@ Threads : {len(guild.threads)}
                       help="Shows boosts count",
                       usage="boosts",
                       aliases=["bc"])
-    @blacklist_check()
-    @ignore_check()
+    
+    
     async def boosts(self, ctx):
         await ctx.send(
             embed=discord.Embed(title=f"Boosts Count Of {ctx.guild.name}",
@@ -874,16 +884,16 @@ Threads : {len(guild.threads)}
             
 
     @commands.hybrid_command(description='Deletes a emoji from the server.', help="Deletes the emoji from the server",usage="removeemoji <emoji>")
-    @blacklist_check()
-    @ignore_check()
+    
+    
     @commands.has_permissions(manage_emojis=True)
     async def removeemoji(self, ctx, emoji: discord.Emoji):
         await emoji.delete()
         await ctx.send(f"**<:check:1087776909246607360> emoji has been deleted.**")
 
     @commands.hybrid_command(description='Unbans Everyone Banned Person From The Guild.', help="Unbans Everyone In The Guild!", aliases=['massunban'],usage="Unbanall")
-    @blacklist_check()
-    @ignore_check()
+    
+    
     @commands.cooldown(1, 30, commands.BucketType.user)
     @commands.max_concurrency(1, per=commands.BucketType.default, wait=False)
     @commands.guild_only() 
@@ -928,8 +938,8 @@ Threads : {len(guild.threads)}
                       help="Shows when a user joined",
                       usage="joined-at [user]",
                       aliases=["joined-at"])
-    @blacklist_check()
-    @ignore_check()
+    
+    
     async def joined_at(self, ctx):
         joined = ctx.author.joined_at.strftime("%a, %d %b %Y %I:%M %p")
         await ctx.send(embed=discord.Embed(title="joined-at",
@@ -948,8 +958,8 @@ Threads : {len(guild.threads)}
             "First message sent in the mentioned channel or current channel",
             usage="firstmsg",
             aliases=["fmsg", "first"])
-    @blacklist_check()
-    @ignore_check()
+    
+    
     async def firstmsg(self, ctx, channel: discord.TextChannel = None):
         if channel is None:
             channel = ctx.channel
@@ -966,8 +976,8 @@ Threads : {len(guild.threads)}
 
 
     @commands.hybrid_command(description='Search github.', usage="github [search]")
-    @blacklist_check()
-    @ignore_check()
+    
+    
     async def github(self, ctx, *, search_query):
         json = requests.get(
             f"https://api.github.com/search/repositories?q={search_query}"
@@ -981,8 +991,8 @@ Threads : {len(guild.threads)}
 
 
     @commands.hybrid_command(description='get info about voice channel.', help="get info about voice channel",usage="Vcinfo <VoiceChannel>")
-    @blacklist_check()
-    @ignore_check()
+    
+    
     async def vcinfo(self, ctx: Context, vc: discord.VoiceChannel):
       e = discord.Embed(title='VC Information', color=0x977FD7)
       e.add_field(name='VC name', value=vc.name, inline=False)
@@ -997,8 +1007,8 @@ Threads : {len(guild.threads)}
 
 
     @commands.hybrid_command(description='shows information a about channel.', help="shows info about channel",aliases=['channeli', 'cinfo', 'ci'], pass_context=True, no_pm=True,usage="Channelinfo [channel]")
-    @blacklist_check()
-    @ignore_check()
+    
+    
     async def channelinfo(self, ctx, *, channel: int = None):
         """Shows channel information"""
         if not channel:
@@ -1063,8 +1073,8 @@ Threads : {len(guild.threads)}
 
     @commands.hybrid_command(description='Creates a note for you', cooldown_after_parsing=True, help="Creates a note for you",usage="Note <message>")
     @cooldown(1, 10, BucketType.user)
-    @blacklist_check()
-    @ignore_check()
+    
+    
     async def note(self, ctx, *, message: str):
       author_id = ctx.author.id
       if len(message) > 50:
@@ -1079,8 +1089,8 @@ Threads : {len(guild.threads)}
               await ctx.send(f"Note created: {message}")
 
     @commands.hybrid_command(description='Shows your note', help="Shows your note",usage="Notes")
-    @blacklist_check()
-    @ignore_check()
+    
+    
     async def notes(self, ctx):
       author_id = ctx.author.id
       notes = collection.find({"_id": author_id})
@@ -1090,8 +1100,8 @@ Threads : {len(guild.threads)}
       await ctx.send(embed=embed)
 
     @commands.hybrid_command(description='Delete the notes', help="Delete the notes , it's a good practice",usage="Trashnotes")
-    @blacklist_check()
-    @ignore_check()
+    
+    
     async def trashnotes(self, ctx):
       author_id = ctx.author.id
       notes = collection.find({"_id": author_id})
@@ -1103,8 +1113,8 @@ Threads : {len(guild.threads)}
 
 
     @commands.hybrid_command(description='Shows your or a user\'s profile card with badges.', name="badges", help="Check what premium badges a user have.", aliases=["badge", "pr", "profile"],usage="badges [user]")
-    @blacklist_check()
-    @ignore_check()
+    
+    
     async def _badges(self, ctx, user: Optional[discord.User] = None):
       mem = user or ctx.author
       badges = getbadges(mem.id)
@@ -1248,6 +1258,7 @@ Threads : {len(guild.threads)}
 
 
 
+
     @commands.hybrid_command(pass_context=True)
     async def g(self, ctx, *, query):
         """Google web search. Ex: [p]g what is discordapp?"""
@@ -1278,3 +1289,6 @@ Threads : {len(guild.threads)}
             else:
                 msg = entries[0]
             await ctx.send(msg)
+            
+def setup(bot):
+    bot.add_cog(Extra(bot))

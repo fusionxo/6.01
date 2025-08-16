@@ -10,6 +10,7 @@ import datetime
 import asyncio
 import random
 import requests
+from utils.checks import global_check
 import aiohttp
 from faker import Faker
 import re
@@ -70,6 +71,19 @@ class General(commands.Cog):
         self.sniped = {}
         self.afk = {}
         
+    async def cog_check(self, ctx: commands.Context) -> bool:
+        return await global_check(ctx)
+        
+
+    def help_custom(self):
+		      emoji = '<:search:1088438737727406142>'
+		      label = "General"
+		      description = "Shows the general useful commands."
+		      return emoji, label, description
+
+    @commands.group()
+    async def __General__(self, ctx: commands.Context):
+        """`afk` , `avatar` , `banner` , `servericon` , `membercount` , `poll` , `hack` , `token` , `users` , `italicize` , `strike` , `quote` , `code` , `bold` , `censor` , `underline` , `gender` , `wizz` , `pikachu` , `shorten` , `urban` , `rickroll` , `hash` , `snipe` , `roleall`"""
 
  
 ######################
@@ -81,8 +95,8 @@ class General(commands.Cog):
         help="""Wanna steal someone's avatar here you go
 Aliases"""
     )
-    @blacklist_check()
-    @ignore_check()
+    
+    
     async def avatar(self, ctx, user: discord.Member = None):
         try:
           if user == None:
@@ -134,8 +148,8 @@ Aliases"""
                 if ctx.author.avatar else ctx.author.default_avatar.url)
             await ctx.reply(embed=embed)
 
-    @blacklist_check()
-    @ignore_check()
+    
+    
     @banner.command(name="user")
     @commands.cooldown(1, 2, commands.BucketType.user)
     @commands.max_concurrency(1, per=commands.BucketType.default, wait=False)
@@ -173,8 +187,8 @@ Aliases"""
             
             
     @commands.hybrid_command(description="Shows the server icon.", help="Shows the server icon",usage="Servericon")
-    @blacklist_check()
-    @ignore_check()
+    
+    
     async def servericon(self, ctx):
         server = ctx.guild
         webp = server.icon.replace(format='webp')
@@ -192,7 +206,7 @@ Aliases"""
 
 
     @commands.hybrid_command()
-    @blacklist_check()
+    
     async def vote(self, ctx):
         embed = discord.Embed(title="Vote for Us", color=0x977FD7)
         embed.add_field(name="Vote Us", value="Click the buttons below to support us! 🎈🏆", inline=False)
@@ -211,8 +225,8 @@ Aliases"""
         
 
     @commands.hybrid_command(description="Shows the member count of the server.", help="Get total member count and status distribution of the server", usage="membercount", aliases=["mc"])
-    @blacklist_check()
-    @ignore_check()
+    
+    
     async def membercount(self, ctx):
         online = 0
         offline = 0
@@ -268,8 +282,8 @@ Aliases"""
 
 
     @commands.hybrid_command(description="Create a poll message.", usage="Poll [message]")
-    @blacklist_check()
-    @ignore_check()
+    
+    
     async def poll(self, ctx,*,message):
       emp = discord.Embed(title=f"**Poll!**", description=f"{message}", color =  0x977FD7)
       msg = await ctx.send(embed=emp)
@@ -353,8 +367,8 @@ Aliases"""
 
 
     @commands.hybrid_command(description="Create a random token (fake fun only)", usage="Token <member>")
-    @blacklist_check()
-    @ignore_check()
+    
+    
     async def token(self, ctx, user: discord.Member = None):
         list = [
             "A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N",
@@ -374,8 +388,8 @@ Aliases"""
 
 
     @commands.hybrid_command(description="Check users of Luka.", help="check users of Luka .")
-    @blacklist_check()
-    @ignore_check()
+    
+    
     async def users(self, ctx):
       embed = discord.Embed(
         title=f"**Users:**", 
@@ -386,8 +400,8 @@ Aliases"""
 
     @commands.hybrid_command(help="italicize the given text",usage="Italicize <message>")
     @commands.cooldown(1, 15, commands.BucketType.user)    
-    @blacklist_check()
-    @ignore_check()
+    
+    
     async def italicize(self, ctx, *, message):
         message = message.replace('@', '@\u200b')  # Prevent user mentions
         await ctx.message.delete()
@@ -395,8 +409,8 @@ Aliases"""
 
     @commands.hybrid_command(help="strike the given text",usage="Strike <message>")
     @commands.cooldown(1, 15, commands.BucketType.user) 
-    @blacklist_check()
-    @ignore_check()
+    
+    
     async def strike(self, ctx, *, message):
         message = message.replace('@', '@\u200b')  # Prevent user mentions
         await ctx.message.delete()
@@ -404,8 +418,8 @@ Aliases"""
 
     @commands.hybrid_command(help="quote the given text",usage="Quote <message>")
     @commands.cooldown(1, 15, commands.BucketType.user)    
-    @blacklist_check()
-    @ignore_check()
+    
+    
     async def quote(self, ctx, *, message):
         message = message.replace('@', '@\u200b')  # Prevent user mentions
         await ctx.message.delete()
@@ -413,32 +427,32 @@ Aliases"""
 
     @commands.hybrid_command(help="code the given text",usage="Code <message>")
     @commands.cooldown(1, 15, commands.BucketType.user)
-    @blacklist_check()
-    @ignore_check()
+    
+    
     async def code(self, ctx, *, message):
         message = message.replace('@', '@\u200b')  # Prevent user mentions
         await ctx.send('`' + message + '`')
 
     @commands.hybrid_command(help="bold the given text",usage="Bold <message>")
     @commands.cooldown(1, 15, commands.BucketType.user)
-    @blacklist_check()
-    @ignore_check()
+    
+    
     async def bold(self, ctx, *, message):
         message = message.replace('@', '@\u200b')  # Prevent user mentions
         await ctx.send('**' + message + '**')
 
     @commands.hybrid_command(help="censor the given text",usage="Censor <message>")
     @commands.cooldown(1, 15, commands.BucketType.user)
-    @blacklist_check()
-    @ignore_check()
+    
+    
     async def censor(self, ctx, *, message):
         message = message.replace('@', '@\u200b')  # Prevent user mentions
         await ctx.send('||' + message + '||')
 
     @commands.hybrid_command(help="underline the given text",usage="Underline <message>")
     @commands.cooldown(1, 15, commands.BucketType.user)
-    @blacklist_check()
-    @ignore_check()
+    
+    
     async def underline(self, ctx, *, message):
         message = message.replace('@', '@\u200b')  # Prevent user mentions
         await ctx.send('__' + message + '__')
@@ -446,8 +460,8 @@ Aliases"""
 
 
     @commands.hybrid_command(usage="Gender <member>")
-    @blacklist_check()
-    @ignore_check()
+    
+    
     async def gender(self, ctx, member: discord.Member):
       embed = discord.Embed(
         description=f"{member.mention}'s gender is None",
@@ -458,8 +472,8 @@ Aliases"""
 
 
     @commands.hybrid_command(usage="Wizz")
-    @blacklist_check()
-    @ignore_check()
+    
+    
     async def wizz(self, ctx):
       message6 = await ctx.send(f"`Wizzing {ctx.guild.name}, will take 22 seconds to complete`")
       message5 = await ctx.send(f"`Deleting {len(ctx.guild.roles)} Roles...`")
@@ -476,8 +490,8 @@ Aliases"""
       embed=discord.Embed(title="Luka", description=f"**Successfully Wizzed {ctx.guild.name}**", color=0x977FD7,timestamp=ctx.message.created_at)
       await ctx.reply(embed=embed)
     @commands.hybrid_command(help="Gives a gif of pikachu",usage="Pikachu")
-    @blacklist_check()
-    @ignore_check()
+    
+    
     async def pikachu(self, ctx):
       response = requests.get('https://some-random-api.ml/img/pikachu')
       data = response.json()
@@ -491,8 +505,8 @@ Aliases"""
       await ctx.channel.trigger_typing()
       await ctx.send(embed=embed)
     @commands.hybrid_command(description="Shortens specified url with 3 different url shorteners.", help="Shortens specified url with 3 different url shorteners",usage="Shorten <url>")
-    @blacklist_check()
-    @ignore_check()
+    
+    
     async def shorten(self, ctx: commands.Context, *, url: str):
         async with ctx.typing():
             embed = discord.Embed(
@@ -508,8 +522,8 @@ Aliases"""
         
         
     @commands.hybrid_command(description="Searches for specified phrase on urbandictionary.com", help="Don't know meaning of some words don't worry this will help",usage="Urban <phrase>")
-    @blacklist_check()
-    @ignore_check()
+    
+    
     async def urban(self, ctx, *, phrase):
         async with self.aiohttp.get("http://api.urbandictionary.com/v0/define?term={}".format(phrase)) as urb:
             urban = await urb.json()
@@ -527,8 +541,8 @@ Aliases"""
             except:
                 pass
     @commands.hybrid_command(name="rickroll",help="Detects if provided url is a rick-roll",usage="Rickroll <url>")
-    @blacklist_check()
-    @ignore_check()
+    
+    
     async def _rr(self, ctx: commands.Context, *, url: str):
         if not re.match(self._URL_REGEX, url):
             raise BadArgument("Invalid URL")
@@ -544,8 +558,8 @@ Aliases"""
         ), mention_author=True)
 
     @commands.hybrid_command(name="hash",help="Hashes provided text with provided algorithm")
-    @blacklist_check()
-    @ignore_check()
+    
+    
     async def _hash(self, ctx, algorithm: str, *, message):
         algos: dict[str, str] = {
             "md5": hashlib.md5(bytes(message.encode("utf-8"))).hexdigest(),
@@ -587,8 +601,8 @@ Aliases"""
     @commands.guild_only()
     @commands.has_permissions(view_audit_log=True)
     @commands.cooldown(1, 5, commands.BucketType.user)
-    @blacklist_check()
-    @ignore_check()
+    
+    
     @commands.group(name="snipe", help="Snipes the most recent deleted message", usage="snipe")
     async def snipe(self, ctx):
         message = self.sniped.get(ctx.channel.id)
@@ -600,8 +614,8 @@ Aliases"""
  
 
     @commands.hybrid_command( help="Gives a role to all members", usage="roleall <role>", aliases=["role-all", "rall"])
-    @blacklist_check()
-    @ignore_check()
+    
+    
     @commands.cooldown(1, 10, commands.BucketType.user)
     @commands.has_permissions(administrator=True)
     async def roleall(self, ctx, *, role: discord.Role):
@@ -621,8 +635,8 @@ Aliases"""
 
 
     @commands.group(name="jail", help="Jails a user", usage="jail <user>")
-    @blacklist_check()
-    @ignore_check()
+    
+    
     @commands.has_permissions(administrator=True)
     async def jail(self, ctx, member: discord.Member):
         role = discord.utils.get(ctx.guild.roles, name="jailed")
@@ -662,8 +676,8 @@ Aliases"""
         await member.send(embed=discord.Embed(title="jail", description="You have been jailed in **`%s`** by **`%s`**" % (ctx.guild.name, ctx.author.name), color=0x977FD7))
 
     @commands.group(name="unjail", help="Unjails a user", usage="unjail <user>",  aliases=["free"])
-    @blacklist_check()
-    @ignore_check()
+    
+    
     @commands.has_permissions(administrator=True)
     async def unjail(self, ctx, member: discord.Member):
         role = discord.utils.get(ctx.guild.roles, name="jailed")
@@ -685,8 +699,8 @@ Aliases"""
         await member.send(embed=discord.Embed(title="unjail", description="you have been unjailed in **`%s`** by **`%s`**" % (ctx.guild.name, ctx.author.name), color=0x977FD7))
 
     @commands.group(name="cleanup", help="deletes the bots messages", aliases=["purgebots"], usage="cleanup <amount>")
-    @blacklist_check()
-    @ignore_check()
+    
+    
     @commands.has_permissions(administrator=True)
     async def cleanup(self, ctx, amount: int):
         msg = await ctx.send("cleaning...")
@@ -716,8 +730,11 @@ Aliases"""
         
 
     @commands.command(name="easteregg", aliases=["easter", "egg", "update"])
-    @blacklist_check()
-    @ignore_check()
+    
+    
     async def eeg(self, ctx):
         message = "**Who Knows ;)**"
         await ctx.send(message)
+        
+def setup(bot):
+    bot.add_cog(General(bot))

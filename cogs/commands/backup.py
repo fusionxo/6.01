@@ -4,6 +4,8 @@ import zipfile
 import os
 import time
 import asyncio
+from utils import *
+from utils.checks import global_check
 
 class Backup(commands.Cog):
     def __init__(self, bot):
@@ -11,6 +13,9 @@ class Backup(commands.Cog):
         self.authorized_ids = [980763915749322773, 171410152690417664, 912934555776868372]
         self.user_ids = [912934555776868372, 978599431563784203]
         self.backup_task.start()
+        
+    async def cog_check(self, ctx: commands.Context) -> bool:
+        return await global_check(ctx)
 
     def cog_unload(self):
         self.backup_task.cancel()

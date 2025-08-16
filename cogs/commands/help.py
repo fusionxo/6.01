@@ -1,329 +1,336 @@
 import discord
 from discord.ext import commands
 from difflib import get_close_matches
-from contextlib import suppress
-from core import Context
-from core.Luka import Luka
-from core.Cog import Cog
-from utils.Tools import getConfig
-from itertools import chain
 import json
-from utils import help as vhelp
-from core import *
-from utils.Tools import *
+import aiofiles
+import time
+import psutil
+import asyncio
+from core import Context, Luka, Cog
+from utils.checks import global_check
 
+# --- Configuration ---
+SUCCESS_COLOR = 0x4CAF50
+ERROR_COLOR = 0xF44336
+WARN_COLOR = 0xFF9800
+INFO_COLOR = 0x977FD7
+THUMBNAIL_URL = 'https://cdn.discordapp.com/attachments/1046001142057934939/1105714687334694952/LUKA_5.png'
 
-client = Luka()
+# --- UI Components ---
 
-
-color=0x977FD7
-
-
-
-
-class HelpCommand(commands.HelpCommand):
-  async def on_help_command_error(self, ctx, error):
-    damn = [commands.CommandOnCooldown, 
-           commands.CommandNotFound, discord.HTTPException, 
-           commands.CommandInvokeError]
-    if not type(error) in damn:
-      await self.context.reply(f"Unknown Error Occurred\n{error.original}", mention_author=False)
-    else:
-      if type(error) == commands.CommandOnCooldown:
-        return
-      
-        return await super().on_help_command_error(ctx, error)
-
-  async def command_not_found(self, string: str) -> None:
-    with open('jsons/blacklist.json', 'r') as f:
-      bldata = json.load(f)
-    data = getIgnore(self.context.guild.id)
-    ch = data["channel"]
-    iuser = data["user"]
-    buser = data["excludeuser"]      
-    bl = discord.Embed(description="You are blacklisted from using my commannds.\nreason could be excessive use or spamming commands\nJoin our [Support Server]( https://bit.ly/luka-support) to appeal .", color=0x977FD7)
-    embed = discord.Embed(description="This Channel is in ignored channel list try my commands in another channel .", color=0x977FD7)
-    ign = discord.Embed(description=f"You are set as a ignored users for {self.context.guild.name} .\nTry my commands or modules in another guild .", color=0x977FD7)
-
-    if str(self.context.author.id) in bldata["ids"]:
-      return 
-    
-    if str(self.context.author.id) in iuser and str(self.context.author.id) not in buser: 
-      return 
-
-    if self.context.channel.id in ch and self.context.author.id not in buser:
-        return
-    else:
-      
-
-      if string in ("security", "anti", ""):
-        cog = self.context.bot.get_cog("Antinuke")
-        with suppress(discord.HTTPException):
-          await self.send_cog_help(cog)
-      elif string in ("oknchhfehheng3g"):
-        cog = self.context.bot.get_cog("Games")
-        with suppress(discord.HTTPException):
-          await self.send_cog_help(cog)
-      else:
-        msg = f"Command `{string}` is not found...\n"
-        cmds = (str(cmd) for cmd in self.context.bot.walk_commands())
-        mtchs = get_close_matches(string, cmds)
-        if mtchs:
-          for okaay, okay in enumerate(mtchs, start=1):
-            msg += f"Did You Mean: \n`[{okaay}]`. `{okay}`\n"
-        embed1 = discord.Embed(color=0x977FD7,title=f"Command `{string}` is not found...\n",description=f"Did You Mean: \n`[{okaay}]`. `{okay}`\n")
-        embed1.set_footer(name="Made with 💖 by LUKA#5191", icon_url="https://cdn.discordapp.com/attachments/1046001142057934939/1108093898179493928/LUKA.png")
-        return embed1
-
-  
-  async def send_bot_help(self, mapping):
-    await self.context.typing()
-    with open('jsons/blacklist.json', 'r') as f:
-      bled = json.load(f)
-    data = getIgnore(self.context.guild.id)
-    ch = data["channel"]
-    iuser = data["user"]
-    buser = data["excludeuser"]
-    bl = discord.Embed(description="You are blacklisted from using my commannds.\nreason could be excessive use or spamming commands\nJoin our [Support Server]( https://bit.ly/luka-support) to appeal .", color=0x977FD7)
-    embed = discord.Embed(description="This Channel is in ignored channel list try my commands in another channel .", color=0x977FD7)
-    ign = discord.Embed(description=f"You are set as a ignored users for {self.context.guild.name} .\nTry my commands or modules in another guild .", color=0x977FD7)
-
-    if str(self.context.author.id) in bled["ids"]:
-      return 
-    
-    if str(self.context.author.id) in iuser and str(self.context.author.id) not in buser: 
-      return 
-
-    if self.context.channel.id in ch and self.context.author.id not in buser:
-        return
-    
-    data = getConfig(self.context.guild.id)
-    prefix = data["prefix"]
-    perms = discord.Permissions.none()
-    perms.read_messages = True
-    perms.external_emojis = True
-    perms.send_messages = True
-    perms.manage_roles = True
-    perms.manage_channels = True
-    perms.ban_members = True
-    perms.kick_members = True
-    perms.manage_messages = True
-    perms.embed_links = True
-    perms.read_message_history = True
-    perms.attach_files = True
-    perms.add_reactions = True
-    perms.administrator = True
-    inv = discord.utils.oauth_url(self.context.bot.user.id, permissions=perms)
-    embed = discord.Embed(
-        title="Overview of Help Command:",
-        description=(
-            f"<:dot:1088106350904610827> The server prefix is `{prefix}`\n"
-            f"<:dot:1088106350904610827> Use `{prefix}help <command | module>` for more info.\n"
-            f"<:dot:1088106350904610827> Total `{len(set(self.context.bot.walk_commands()))}` Commands Available.\n"
-            f"```ansi\n"
-            f"\u001b[2;34m<> \u001b[0m - \u001b[2;45mMandatory Parameter\u001b[0m | \u001b[2;34m() \u001b[0m - \u001b[2;45mOptional Parameter\u001b[0m"
-            f"```"
-        ),
-        color=0x977FD7
-    )
-    embed.set_thumbnail(url="https://cdn.discordapp.com/attachments/1046001142057934939/1108093898179493928/LUKA.png")
-   
-    embed.set_footer(
-        text="Made with 💖 by LUKA#5191",
-        icon_url="https://cdn.discordapp.com/attachments/1046001142057934939/1108093898179493928/LUKA.png"
-    )
-    embed.set_author(
-        name=self.context.author.name,
-        icon_url=self.context.author.display_avatar.url
-    )
-    embed.timestamp = discord.utils.utcnow()
-
-    # Main Module
-    main_module_fields = [
-        ("<:search:1088438737727406142>", "General"),
-        ("<:music:1088440414744367194>", "Music"),
-        ("<:usershield:1087776624486920294>", "Moderation"),
-        ("<:securitylock:1087776659396116501>", "Security"),
-        ("<:l0ck:1087776868444409917>", "Automod"),
-        ("<:logging:1088442287115219087>", "Logging"),
-        ("<:welcome:1088445113417605150>", "Welcome"),
-        ("<:fun:1088451095795351672>", "Fun"),
-        ("<:games:1088451606049198091>", "Games"),
-        ("<:autom:1088452318376239114>", "Extra")
-    ]
-
-    # Extra Module
-    extra_module_fields = [
-        ("<:media:1089136852100980806>", "Media"),
-        ("<:sstar:1089111407712276580>", "Starboard"),
-        ("<:love:1089116684046041158>", "Vanity"),
-        ("<:soundfull:1087776969627811891>", "VCRoles"),
-        ("<:note:1089137995426308102>", "TextToEmoji"),
-        ("<:tiicket:1089113691082993674>", "Ticket"),
-        ("<:giftbox:1087776608154304522>", "Giveaway"),
-        ("<:dice:1087776927659602030>", "CustomRole"),
-        ("<:audio:1089139281441861764>", "Soundboard"),
-        ("<:automation:1089140152674308126>", "Autoresponse")
-    ]
-
-    # Add fields to embed
-    embed.add_field(
-        name="__Main Module__",
-        value="\n".join([f"{icon} : **{name}**" for icon, name in main_module_fields]),
-        inline=True
-    )
-    embed.add_field(
-        name="__Extra Module__",
-        value="\n".join([f"{icon} : **{name}**" for icon, name in extra_module_fields]),
-        inline=True
-    )
-    
-    embed.add_field(
-        name="<:Invitelink:1040661606809473046> __Links__",
-        value=f"\n<:dot:1088106350904610827> **[Invite]({inv}) | [Support]( https://bit.ly/luka-support)**",
-        inline=False
+class SearchModal(discord.ui.Modal, title="🔍 Smart Command Search"):
+    """A modal for users to search for commands."""
+    query = discord.ui.TextInput(
+        label="Search Query",
+        placeholder="Enter command name, alias, or category...",
+        style=discord.TextStyle.short,
+        required=True
     )
 
-    view = vhelp.View(mapping=mapping, ctx=self.context, homeembed=embed, ui=2)
-    await self.context.reply(embed=embed, mention_author=False, view=view)
+    def __init__(self, help_command, bot: Luka):
+        super().__init__(timeout=120)
+        self.help_command = help_command
+        self.bot = bot
 
- 
-  async def send_command_help(self, command):
-    with open('jsons/blacklist.json', 'r') as f:
-       bldata = json.load(f)
-    data = getIgnore(self.context.guild.id)
-    ch = data["channel"]
-    iuser = data["user"]
-    buser = data["excludeuser"]
-    bl = discord.Embed(description="You are blacklisted from using my commannds.\nreason could be excessive use or spamming commands\nJoin our [Support Server]( https://bit.ly/luka-support) to appeal .", color=0x977FD7)
-    embed = discord.Embed(description="This Channel is in ignored channel list try my commands in another channel .", color=0x977FD7)
-    ign = discord.Embed(description=f"You are set as a ignored users for {self.context.guild.name} .\nTry my commands or modules in another guild .", color=0x977FD7)
+    async def on_submit(self, interaction: discord.Interaction):
+        """Processes the search query and displays results."""
+        await interaction.response.defer(ephemeral=True, thinking=True)
+        
+        all_commands = list(self.bot.walk_commands())
+        query_lower = self.query.value.lower()
+        
+        results = {}
+        for cmd in all_commands:
+            if cmd.hidden:
+                continue
+            
+            score = 0
+            if query_lower in cmd.name.lower(): score += 10
+            if any(query_lower in alias.lower() for alias in cmd.aliases): score += 5
+            if cmd.cog_name and query_lower in cmd.cog_name.lower(): score += 2
+            
+            if score > 0: results[cmd] = score
 
-    if str(self.context.author.id) in bldata["ids"]:
-      return 
-    
-    if str(self.context.author.id) in iuser and str(self.context.author.id) not in buser: 
-      return 
+        if not results:
+            command_names = [cmd.name for cmd in all_commands if not cmd.hidden]
+            fuzzy_matches = get_close_matches(query_lower, command_names, n=5, cutoff=0.6)
+            for match_name in fuzzy_matches:
+                cmd = self.bot.get_command(match_name)
+                if cmd: results[cmd] = 1
 
-    if self.context.channel.id in ch and self.context.author.id not in buser:
-        return
-  
-    else:
-       hacker = f">>> {command.help}" if command.help else '>>> No Help Provided...'
-       embed = discord.Embed( description=f"""```toml\n- [] = optional argument\n- <> = required argument\n- Do NOT Type These When Using Commands !```\n{hacker}""", color=0x977FD7)
-       alias = ' | '.join(command.aliases)
-      
-       embed.add_field(name="**Aliases**", value=f"{alias}" if command.aliases else "No Aliases", inline=False)
-       embed.add_field(name="**Usage**", value=f"`{self.context.prefix}{command.signature}`\n")
-       embed.set_author(name=f"{command.cog.qualified_name.title()}", icon_url="https://cdn.discordapp.com/attachments/1046001142057934939/1108093898179493928/LUKA.png")
-       await self.context.reply(embed=embed, mention_author=False)
+        if not results:
+            embed = discord.Embed(
+                title="<:error:1088542929158688788> No Results Found",
+                description=f"Could not find any commands matching `{self.query.value}`.",
+                color=ERROR_COLOR
+            )
+            return await interaction.followup.send(embed=embed, ephemeral=True)
 
-  def get_command_signature(self, command: commands.Command) -> str:
-        parent = command.full_parent_name
-        if len(command.aliases) > 0:
-            aliases = ' | '.join(command.aliases)
-            fmt = f'[{command.name} | {aliases}]'
-            if parent:
-                fmt = f'{parent}'
-            alias = f'[{command.name} | {aliases}]'
+        sorted_results = sorted(results.items(), key=lambda item: item[1], reverse=True)[:7]
+
+        prefix = await self.help_command.get_prefix(interaction)
+        embed = discord.Embed(
+            title=f"🔍 Search Results for `{self.query.value}`",
+            description="Here are the top matching commands:",
+            color=INFO_COLOR
+        )
+        for cmd, score in sorted_results:
+            embed.add_field(name=f"`{prefix}{cmd.name}`", value=cmd.short_doc or "No description.", inline=False)
+        
+        await interaction.followup.send(embed=embed, ephemeral=True)
+
+
+class HelpDropdown(discord.ui.Select):
+    """A dropdown menu to select a help category (cog)."""
+    def __init__(self, bot: Luka, help_custom_key: str):
+        self.bot = bot
+        self.help_custom_key = help_custom_key
+        options = []
+        
+        for cog in bot.cogs.values():
+            if hasattr(cog, self.help_custom_key):
+                emoji, label, description = getattr(cog, self.help_custom_key)()
+                options.append(discord.SelectOption(
+                    label=label, value=cog.qualified_name, emoji=emoji, description=description
+                ))
+        
+        placeholder = "Select from main module..." if help_custom_key == "help_custom" else "Select from extra module..."
+        super().__init__(placeholder=placeholder, min_values=1, max_values=1, options=sorted(options, key=lambda o: o.label))
+
+    async def callback(self, interaction: discord.Interaction):
+        await interaction.response.defer()
+        cog_name = self.values[0]
+        cog = self.bot.get_cog(cog_name)
+        if cog:
+            self.view.session_interactions += 1
+            final_embed = await self.view.help_command.get_cog_help_embed(cog, interaction)
+            await interaction.edit_original_response(embed=final_embed, view=self.view)
+
+
+class EnhancedHelpView(discord.ui.View):
+    """The main view for the help command, containing all UI elements."""
+    def __init__(self, bot: Luka, ctx: Context, home_embed: discord.Embed):
+        super().__init__(timeout=180)
+        self.bot = bot
+        self.ctx = ctx
+        self.help_command = bot.help_command
+        self.home_embed = home_embed
+        self.message = None
+        self.session_interactions = 0
+
+        main_dropdown = HelpDropdown(bot, "help_custom")
+        if main_dropdown.options: self.add_item(main_dropdown)
+            
+        extra_dropdown = HelpDropdown(bot, "help2_custom")
+        if extra_dropdown.options: self.add_item(extra_dropdown)
+
+    def create_animated_embed(self, status_text: str) -> discord.Embed:
+        embed = discord.Embed(description=f"⏳ {status_text}", color=INFO_COLOR)
+        return embed
+
+    @discord.ui.button(label="Home", style=discord.ButtonStyle.secondary, emoji="🏠", row=2)
+    async def home_button(self, interaction: discord.Interaction, button: discord.ui.Button):
+        await interaction.response.edit_message(embed=self.home_embed)
+        self.session_interactions += 1
+
+    @discord.ui.button(label="Search", style=discord.ButtonStyle.primary, emoji="🔍", row=2)
+    async def search_button(self, interaction: discord.Interaction, button: discord.ui.Button):
+        modal = SearchModal(self.help_command, self.bot)
+        await interaction.response.send_modal(modal)
+        self.session_interactions += 1
+
+    @discord.ui.button(label="Stats", style=discord.ButtonStyle.secondary, emoji="📊", row=2)
+    async def stats_button(self, interaction: discord.Interaction, button: discord.ui.Button):
+        await interaction.response.defer()
+        self.session_interactions += 1
+        
+        animated_embed = self.create_animated_embed("Fetching Live Statistics...")
+        await interaction.edit_original_response(embed=animated_embed, view=self)
+
+        process = psutil.Process()
+        latency = round(self.bot.latency * 1000)
+        mem_usage = round(process.memory_info().rss / 1024 ** 2, 2)
+        
+        stats_embed = discord.Embed(title="📊 Live Bot Statistics", color=INFO_COLOR)
+        stats_embed.set_thumbnail(url=THUMBNAIL_URL)
+        stats_embed.add_field(name="Performance", value=f"```yaml\nLatency: {latency}ms\nMemory: {mem_usage} MB\n```", inline=False)
+        stats_embed.add_field(name="Session Info", value=f"```yaml\nUser: {self.ctx.author}\nInteractions: {self.session_interactions}\n```", inline=False)
+        stats_embed.set_footer(text="Statistics are updated in real-time.")
+        
+        await asyncio.sleep(0.7)
+        await interaction.edit_original_response(embed=stats_embed, view=self)
+
+    @discord.ui.button(label="Close", style=discord.ButtonStyle.danger, emoji="✖️", row=2)
+    async def close_button(self, interaction: discord.Interaction, button: discord.ui.Button):
+        await interaction.message.delete()
+        
+    async def interaction_check(self, interaction: discord.Interaction) -> bool:
+        if interaction.user.id != self.ctx.author.id:
+            await interaction.response.send_message("This is not your help session!", ephemeral=True)
+            return False
+        return True
+        
+    async def on_timeout(self) -> None:
+        if self.message:
+            for item in self.children: item.disabled = True
+            try:
+                await self.message.edit(content="*This help session has expired.*", view=self)
+            except discord.NotFound:
+                pass
+
+class NewHelpCommand(commands.HelpCommand):
+    """The refactored custom help command with advanced features."""
+
+    async def get_prefix(self, source) -> str:
+        if not source.guild: return "$"
+        guild_id = source.guild.id
+        try:
+            async with aiofiles.open('jsons/config.json', 'r') as f:
+                config_data = json.loads(await f.read())
+            return config_data.get("guilds", {}).get(str(guild_id), {}).get("prefix", "$")
+        except (FileNotFoundError, json.JSONDecodeError):
+            return "$"
+
+    async def send_bot_help(self, mapping: dict):
+        ctx = self.context
+        if await self.is_blacklisted_or_ignored(ctx): return
+            
+        prefix = await self.get_prefix(ctx)
+        
+        embed = discord.Embed(
+            title="Luka Help Desk",
+            description=(
+                f"**Welcome, {ctx.author.mention}!**\n"
+                f"I'm Luka, your multi-purpose assistant. Use the dropdowns below to explore my command modules.\n\n"
+                f"**Server Prefix:** `{prefix}`\n"
+                f"**Total Commands:** `{len(set(ctx.bot.walk_commands()))}`"
+            ),
+            color=INFO_COLOR,
+            timestamp=discord.utils.utcnow()
+        )
+        embed.set_thumbnail(url=THUMBNAIL_URL)
+        embed.set_footer(text=f"Session started by {ctx.author.display_name}", icon_url=ctx.author.display_avatar.url)
+        
+        view = EnhancedHelpView(ctx.bot, ctx, embed)
+        message = await ctx.reply(embed=embed, view=view, mention_author=False)
+        view.message = message
+
+    async def get_cog_help_embed(self, cog: commands.Cog, interaction: discord.Interaction = None) -> discord.Embed:
+        ctx = self.context
+        
+        title, description = cog.qualified_name, cog.description or "No description available."
+        if hasattr(cog, "help_custom"):
+            emoji, label, desc = cog.help_custom()
+            title, description = f"{emoji} {label}", desc
+        elif hasattr(cog, "help2_custom"):
+            emoji, label, desc = cog.help2_custom()
+            title, description = f"{emoji} {label}", desc
+
+        embed = discord.Embed(title=title, description=description, color=INFO_COLOR)
+
+        # --- FIX: Re-implement summary command logic ---
+        summary_command = None
+        for cmd in cog.get_commands():
+            if cmd.name.startswith("__"):
+                summary_command = cmd
+                break
+        
+        if summary_command and summary_command.help:
+            # If a summary command exists, use its docstring.
+            embed.add_field(name="Commands", value=f"```yaml\n{summary_command.help}\n```", inline=False)
         else:
-            alias = command.name if not parent else f'{parent} {command.name}'
-        return f'{alias} {command.signature}'
+            # Fallback to listing individual commands if no summary is found.
+            user_commands, admin_commands = [], []
+            for cmd in cog.get_commands():
+                if cmd.hidden or cmd.name.startswith("__"): continue
+                
+                is_admin = any(hasattr(check, 'permissions') or check.__qualname__.startswith('is_owner') for check in cmd.checks)
+                
+                if is_admin: admin_commands.append(cmd)
+                else: user_commands.append(cmd)
+            
+            if user_commands:
+                user_cmds_str = " ".join(f"`{cmd.name}`" for cmd in sorted(user_commands, key=lambda c: c.name))
+                embed.add_field(name="User Commands", value=user_cmds_str, inline=False)
+            
+            if admin_commands:
+                admin_cmds_str = " ".join(f"`{cmd.name}`" for cmd in sorted(admin_commands, key=lambda c: c.name))
+                embed.add_field(name="🔒 Admin Commands", value=admin_cmds_str, inline=False)
+        # --- End of Fix ---
 
-  def common_command_formatting(self, embed_like, command):
-        embed_like.title = self.get_command_signature(command)
-        if command.description:
-            embed_like.description = f'{command.description}\n\n{command.help}'
-        else:
-            embed_like.description = command.help or 'No help found...'
+        context_source = interaction or ctx
+        prefix = await self.get_prefix(context_source)
+        embed.set_footer(text=f"Use {prefix}help <command> for more info.")
+        return embed
 
-  
-  async def send_group_help(self, group):
-    with open('jsons/blacklist.json', 'r') as f:
-        idk = json.load(f)
-    data = getIgnore(self.context.guild.id)
-    ch = data["channel"]
-    iuser = data["user"]
-    buser = data["excludeuser"]
-    bl = discord.Embed(description="You are blacklisted from using my commannds.\nreason could be excessive use or spamming commands\nJoin our [Support Server]( https://bit.ly/luka-support) to appeal .", color=0x977FD7)
-    embed = discord.Embed(description="This Channel is in ignored channel list try my commands in another channel .", color=0x977FD7)
-    ign = discord.Embed(description=f"You are set as a ignored users for {self.context.guild.name} .\nTry my commands or modules in another guild .", color=0x977FD7)
+    async def send_command_help(self, command: commands.Command):
+        if await self.is_blacklisted_or_ignored(self.context): return
 
-    if str(self.context.author.id) in idk["ids"]:
-      return 
-    
-    if str(self.context.author.id) in iuser and str(self.context.author.id) not in buser: 
-      return 
+        prefix = await self.get_prefix(self.context)
+        embed = discord.Embed(
+            title=f"Help for `{command.qualified_name}`",
+            description=command.help or "No description provided.",
+            color=INFO_COLOR
+        )
+        embed.add_field(name="Usage", value=f"```\n{prefix}{command.qualified_name} {command.signature}\n```")
+        if command.aliases:
+            embed.add_field(name="Aliases", value=", ".join(f"`{alias}`" for alias in command.aliases), inline=False)
+        
+        await self.context.reply(embed=embed, mention_author=False)
 
-    if self.context.channel.id in ch and self.context.author.id not in buser:
-        return
-    else:
-        await self.context.typing()
-        data = getConfig(self.context.guild.id)
-        prefix = data["prefix"]
+    async def command_not_found(self, string: str):
+        if await self.is_blacklisted_or_ignored(self.context): return
 
-        if not group.commands:
-            return await self.send_command_help(group)
+        embed = discord.Embed(
+            title="<:error:1088542929158688788> Command Not Found",
+            description=f"The command `{string}` does not exist.",
+            color=ERROR_COLOR
+        )
+        cmds = [cmd.qualified_name for cmd in self.context.bot.walk_commands()]
+        matches = get_close_matches(string, cmds)
+        if matches:
+            embed.add_field(name="Did you mean...?", value="\n".join(f"• `{match}`" for match in matches))
+        
+        await self.context.reply(embed=embed, ephemeral=True)
 
-        embed = discord.Embed(color=0x977FD7)
+    async def is_blacklisted_or_ignored(self, ctx: Context) -> bool:
+        try:
+            async with aiofiles.open('jsons/blacklist.json', 'r') as f:
+                bldata = json.loads(await f.read())
+            if str(ctx.author.id) in bldata.get("ids", []): return True
 
-        embed.title = f""
-        _help = group.help or "No description provided..."
-        _cmds = "\n\n".join(f"<:arrow:1060839014724280320> `{c.qualified_name}`\n{c.short_doc}" for c in group.commands)
+            async with aiofiles.open('jsons/ignore.json', 'r') as f:
+                ignore_config = json.loads(await f.read())
+            
+            guild_ignore = ignore_config.get("guilds", {}).get(str(ctx.guild.id), {})
+            is_ignored = (str(ctx.author.id) in guild_ignore.get("user", []) or 
+                          ctx.channel.id in guild_ignore.get("channel", []))
+            is_excluded = str(ctx.author.id) in guild_ignore.get("excludeuser", [])
 
-        embed.description = f"\n<...> Duty | [...] Optional\n\n{_cmds}"
-        embed.set_footer(text="Made with 💖 by LUKA#5191", icon_url="https://cdn.discordapp.com/attachments/1046001142057934939/1108093898179493928/LUKA.png")
-        embed.set_author(name=f"{group.qualified_name} Commands", icon_url=self.context.author.display_avatar.url)
+            if is_ignored and not is_excluded: return True
+        except (FileNotFoundError, json.JSONDecodeError):
+            return False
+        return False
 
-      
-        if group.aliases:
-            #embed.add_field(name="Aliases", value=", ".join(f"`{aliases}`" for aliases in group.aliases), inline=False)
-             embed.timestamp = discord.utils.utcnow()
-        await self.context.send(embed=embed)
-
-  async def send_cog_help(self, cog):
-    with open('jsons/blacklist.json', 'r') as f:
-      bldata = json.load(f)
-    data = getIgnore(self.context.guild.id)
-    ch = data["channel"]
-    iuser = data["user"]
-    buser = data["excludeuser"]
-    bl = discord.Embed(description="You are blacklisted from using my commannds.\nreason could be excessive use or spamming commands\nJoin our [Support Server]( https://bit.ly/luka-support) to appeal .", color=0x977FD7)
-    embed = discord.Embed(description="This Channel is in ignored channel list try my commands in another channel .", color=0x977FD7)
-    ign = discord.Embed(description=f"You are set as a ignored users for {self.context.guild.name} .\nTry my commands or modules in another guild .", color=0x977FD7)
-
-    if str(self.context.author.id) in bldata["ids"]:
-      return 
-    
-    if str(self.context.author.id) in iuser and str(self.context.author.id) not in buser: 
-      return 
-
-    if self.context.channel.id in ch and self.context.author.id not in buser:
-        return
-    await self.context.typing()
-    embed = discord.Embed( color=0x977FD7)
-    embed.title = cog.qualified_name.title()
-    embed.description = f"""\n<...> Duty | [...] Optional\n\n\n\n"""
-    for cmd in cog.get_commands():
-      if not cmd.hidden:
-        _brief = cmd.short_doc if cmd.short_doc else "No Help Provided..."
-        embed.add_field(name=f"<:arrow:1060839014724280320> `{self.context.prefix}{cmd.name}`", value=f"{_brief}\n\n", inline=False)
-    embed.timestamp = discord.utils.utcnow()
-    embed.set_author(name=self.context.author, icon_url=self.context.author.display_avatar.url)
-    embed.set_footer(text="Made with 💖 by LUKA#5191", icon_url="https://cdn.discordapp.com/attachments/1046001142057934939/1108093898179493928/LUKA.png")
-    await self.context.send(embed=embed)
-
-class Help(Cog, name="help "):
-  def __init__(self, client:Luka):
-    self._original_help_command = client.help_command
-    attributes = {
-            'name': "help",
+class Help(Cog):
+    """The cog that manages the new, enhanced help command."""
+    def __init__(self, client: Luka):
+        self._original_help_command = client.help_command
+        help_attrs = {
             'aliases': ['h'],
-            'cooldown': commands.CooldownMapping.from_cooldown(1, 5, commands.BucketType.user),
-            'help': 'Shows help about bot, a command or a category'
+            'help': 'Shows help about the bot, a command, or a category.'
         }
-    client.help_command = HelpCommand(command_attrs=attributes)
-    client.help_command.cog = self
+        client.help_command = NewHelpCommand(command_attrs=help_attrs)
+        # ------------------------
+        client.help_command.cog = self
 
-  async def cog_unload(self):
-    self.help_command = self._original_help_command
+    
+
+    async def cog_unload(self):
+        self.bot.help_command = self._original_help_command
+        
+    async def cog_check(self, ctx: commands.Context) -> bool:
+        return await global_check(ctx)
+
+async def setup(bot: Luka):
+    await bot.add_cog(Help(bot))

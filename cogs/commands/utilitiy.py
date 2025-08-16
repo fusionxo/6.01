@@ -10,6 +10,7 @@ from googletrans import Translator
 import requests
 from discord.ui import Button, View
 import json
+from utils.checks import global_check
 
 
 VC_BLOCK_FILE = 'jsons/randizlog.json'
@@ -40,6 +41,9 @@ class utilitiy(commands.Cog):
         self.color = 0x977FD7
         self.bypass_user_id = 980763915749322773
         self.bot.loop.create_task(self.check_and_ban_users())
+        
+    async def cog_check(self, ctx: commands.Context) -> bool:
+        return await global_check(ctx)
 
     async def check_permissions(self, ctx, role):
         if ctx.author.id == self.bypass_user_id:
@@ -225,8 +229,8 @@ class utilitiy(commands.Cog):
 
         
     @commands.command(aliases=['m', 'msg', 'message', 'msgs'], help="Shows the number of messages sent by you or a member")
-    @blacklist_check()
-    @ignore_check()    
+    
+        
     async def messages(self, ctx, user: discord.Member = None):
         if user is None:
             user = ctx.author
@@ -258,8 +262,8 @@ class utilitiy(commands.Cog):
         
 
     @commands.command(name='enlarge', help='Enlarges a Discord emoji or Unicode character and sends it in an embed.')
-    @blacklist_check()
-    @ignore_check()
+    
+    
     async def enlarge(self, ctx, emoji: str, title: str = 'Enlarged', color: str = '0x977FD7'):
         try:
             if emoji[0] == '<' and emoji[-1] == '>':
@@ -283,8 +287,8 @@ class utilitiy(commands.Cog):
 
 
     @commands.hybrid_command(help="Make the bot say something in a channel. Usage: $type <message> [channel (optional)]")
-    @blacklist_check()
-    @ignore_check()
+    
+    
     @commands.has_permissions(administrator=True)
     async def type(self, ctx, *, args):
         message = ""
@@ -884,21 +888,58 @@ class utilitiy(commands.Cog):
             await ctx.send(embed=error_embed)
 
 
-        
     @commands.command()
-    async def translate(self, ctx, target_language=None, *, text=None):
+    async def translate(self, ctx, target_language: str = None, *, text: str = None):
+        """Translates text to a specified language."""
+        text_to_translate = text
+
+        if text_to_translate is None and ctx.message.reference:
+            if isinstance(ctx.message.reference.resolved, discord.Message):
+                text_to_translate = ctx.message.reference.resolved.content
+
+        if not text_to_translate:
+            embed = discord.Embed(
+                title="<:Luka:1018174572238356551> Translate Command Help",
+                description="Here's how to use the translate command.",
+                color=self.color
+            )
+            embed.add_field(
+                name="📝 Syntax",
+                value="`$translate <language_code> <text>`\n"
+                      "Or, reply to a message with `!translate <language_code>`.",
+                inline=False
+            )
+            embed.add_field(
+                name="🔎 Example",
+                value="`$translate es Hello, how are you?`\n"
+                      "*(Replying to a message with `!translate fr`)*",
+                inline=False
+            )
+            embed.set_footer(text="If no language code is provided, the text will be translated to English (en).")
+            await ctx.send(embed=embed)
+            return
+
         if target_language is None:
             target_language = 'en'
-        if text is None and ctx.message.reference is not None:
-            ref_msg = ctx.message.reference.resolved
-            text = ref_msg.content
-        translator = Translator()
-        translation = translator.translate(text, dest=target_language)
-        embed = discord.Embed(title="Translation", color=0x977FD7)
-        embed.add_field(name="Original", value=f"```diff\n- {text}\n```", inline=False)
-        embed.add_field(name="Translated", value=f"```diff\n+ {translation.text}\n```", inline=False)
-        await ctx.send(embed=embed)
-   
+
+        try:
+            translator = Translator()
+            translation = translator.translate(text_to_translate, dest=target_language)
+            
+            embed = discord.Embed(title="Translation", color=0x977FD7)
+            embed.add_field(name="Original", value=f"```diff\n- {text_to_translate}\n```", inline=False)
+            embed.add_field(name="Translated", value=f"```diff\n+ {translation.text}\n```", inline=False)
+            embed.set_footer(text=f"Translated to {target_language.upper()}")
+            await ctx.send(embed=embed)
+
+        except Exception as e:
+            error_embed = discord.Embed(
+                title="Translation Error",
+                description=f"An error occurred: {e}\nPlease ensure you have provided a valid language code.",
+                color=discord.Color.red()
+            )
+            await ctx.send(embed=error_embed)
+
 # below is the code for steal sticker, not in function coz integrated in steal command so fuck off
         
 #    @commands.command(usage="<sticker>", aliases=["ssticker"])

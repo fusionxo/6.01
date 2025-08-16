@@ -2,6 +2,7 @@ import discord
 from discord.ext import commands
 import json
 from utils.Tools import *
+from utils.checks import global_check
 
 class blword(commands.Cog):
     def __init__(self, client):
@@ -10,6 +11,19 @@ class blword(commands.Cog):
         self.whitelist = {}
         self.banned_words = []
         self.exception_list = []
+        
+    async def cog_check(self, ctx: commands.Context) -> bool:
+        return await global_check(ctx)
+        
+    def help_custom(self):
+		      emoji = '<:knight:1087776872928120915>'
+		      label = "BlacklistWord"
+		      description = "Shows BlacklistWord commands."
+		      return emoji, label, description
+
+    @commands.group()
+    async def __BlacklistWord__(self, ctx: commands.Context):
+        """`blwordlist enable`, `blwordlist disable`, `blwhitelist add`, `blwhitelist remove`"""
 
         try:
             with open('jsons/blwordlist.json', 'r') as f:
@@ -41,8 +55,8 @@ class blword(commands.Cog):
             self.exception_list = ['pass', 'world', 'python']
 
     @commands.command(description='Enable/Disable blacklist word checking.')
-    @blacklist_check()
-    @ignore_check()
+    
+    
     async def blwordlist(self, ctx, arg):
         guild_id = str(ctx.guild.id)
         arg = arg.lower()
@@ -65,8 +79,8 @@ class blword(commands.Cog):
 
     @commands.command(description="Whitelist a user so that blacklisted words do not affect them. (Requires manage messages permission)")
     @commands.has_permissions(manage_messages=True)
-    @blacklist_check()
-    @ignore_check()
+    
+    
     async def blwhitelist(self, ctx, action: str, member: discord.Member):
 
         guild_id = str(ctx.guild.id)
@@ -126,5 +140,5 @@ class blword(commands.Cog):
                 await message.channel.send(embed=embed)
                 break
 
-def setup(client):
-    client.add_cog(blword(client))
+def setup(bot):
+    bot.add_cog(blword(bot))

@@ -1,11 +1,16 @@
 import discord
 from discord.ext import commands
+from utils import *
+from utils.checks import global_check
 
 DEV_SUGGESTION_CHANNEL_ID = 1085536508129312788
 
 class Suggestion(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
+        
+    async def cog_check(self, ctx: commands.Context) -> bool:
+        return await global_check(ctx)
 
     @commands.hybrid_command(name='suggest', description='Send a suggestion to the bot developer.')
     @commands.cooldown(1, 300, commands.BucketType.user) # 5-minute cooldown per user

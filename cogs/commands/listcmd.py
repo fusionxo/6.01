@@ -2,6 +2,9 @@ import discord
 from discord.ext import commands
 import reactionmenu
 from reactionmenu import ViewMenu, ViewButton
+from utils import *
+from utils.checks import global_check
+
 #pencho
 async def boost_lis(ctx, color, listxd, *, title):
   embed_array = []
@@ -279,6 +282,9 @@ class List(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
         self.tasks = []
+        
+    async def cog_check(self, ctx: commands.Context) -> bool:
+        return await global_check(ctx)
       
     @commands.hybrid_group(name="list")
     async def list(self, ctx):

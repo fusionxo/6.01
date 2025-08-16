@@ -3,6 +3,8 @@ from discord.ext import commands
 from discord import ui
 import aiosqlite
 import asyncio
+from utils import *
+from utils.checks import global_check
 
 # --- MODALS FOR TICKET SETUP ---
 
@@ -40,6 +42,8 @@ class EmbedMenuModal(discord.ui.Modal):
         self.add_item(self.log_channel_id)
         self.add_item(self.multiple_menus)
         self.add_item(self.menu_count)
+
+        
 
     async def on_submit(self, interaction: discord.Interaction):
         await interaction.response.defer(ephemeral=True)
@@ -502,6 +506,21 @@ class TicketCog(commands.Cog):
         self.main_category_id = None
         self.panel_channel = None
         self.panel_message = None
+
+    async def cog_check(self, ctx: commands.Context) -> bool:
+        return await global_check(ctx)
+        
+        
+    def help2_custom(self):
+		      emoji = '<:tiicket:1089113691082993674>'
+		      label = "Ticket"
+		      description = "Show the help menu of ticket command."
+		      return emoji, label, description
+
+    
+    @commands.group()
+    async def __Tickets__(self, ctx: commands.Context):
+        """`ticket setup`, `ticket create`, `ticket addmember`, `ticket close`, `ticket reopen`, `ticket delete`, `ticket save`"""
 
     @commands.Cog.listener()
     async def on_ready(self):

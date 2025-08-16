@@ -30,7 +30,7 @@ proxies={"http": 'http://' + next(proxs)}
 class antiguild(Cog):
     def __init__(self, client: Luka):
         self.client = client      
-        self.headers = {"Authorization": f"Bot token"}
+        self.headers = {"Authorization": f"Bot [REDACTED_TOKEN]"}
         print("Cog Loaded: Antiguild")
     @commands.Cog.listener()
     async def on_guild_update(self, before, after) -> None:

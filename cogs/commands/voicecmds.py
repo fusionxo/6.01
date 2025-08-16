@@ -6,16 +6,30 @@ from utils.Tools import *
 from typing import Optional, Union
 from discord.ext.commands import Context
 from utils import *
+from utils.checks import global_check
 
 
 class VoiceCmd(commands.Cog):
 
     def __init__(self, bot):
         self.bot = bot
+        
+    async def cog_check(self, ctx: commands.Context) -> bool:
+        return await global_check(ctx)
+        
+    def help_custom(self):
+		      emoji = '<:voice:1090677401874337833>'
+		      label = "VoiceCmds"
+		      description = "Shows the Voice commands."
+		      return emoji, label, description
+
+    @commands.group()
+    async def __Voice__(self, ctx: commands.Context):
+        """`voice`, `voice kick` , `voice kickall` , `voice mute` , `voice muteall` , `voice unmute` , `voice unmuteall` , `voice deafen` , `voice deafenall` , `voice undeafen` , `voice undeafenall` , `voice moveall`"""
 
     @commands.group(name="voice", invoke_without_command=True, aliases=['vc'])
-    @blacklist_check()
-    @ignore_check()
+    
+    
     async def vc(self, ctx: commands.Context):
         if ctx.subcommand_passed is None:
             await ctx.send_help(ctx.command)
@@ -26,8 +40,8 @@ class VoiceCmd(commands.Cog):
                 usage="voice kick <member>")
     @commands.has_permissions(administrator=True)
     @commands.cooldown(1, 10, commands.BucketType.user)
-    @blacklist_check()
-    @ignore_check()
+    
+    
     @commands.max_concurrency(1, per=commands.BucketType.default, wait=False)
     async def _kick(self, ctx, *, member: discord.Member):
         if member.voice is None:
@@ -57,8 +71,8 @@ class VoiceCmd(commands.Cog):
                 usage="voice kick all")
     @commands.has_permissions(administrator=True)
     @commands.cooldown(1, 10, commands.BucketType.user)
-    @blacklist_check()
-    @ignore_check()
+    
+    
     @commands.max_concurrency(1, per=commands.BucketType.default, wait=False)
     async def _kickall(self, ctx):
         if ctx.author.voice is None:
@@ -92,8 +106,8 @@ class VoiceCmd(commands.Cog):
                 usage="voice mute <member>")
     @commands.has_permissions(administrator=True)
     @commands.cooldown(1, 10, commands.BucketType.user)
-    @blacklist_check()
-    @ignore_check()
+    
+    
     @commands.max_concurrency(1, per=commands.BucketType.default, wait=False)
     async def _mute(self, ctx, *, member: discord.Member):
         if member.voice is None:
@@ -132,8 +146,8 @@ class VoiceCmd(commands.Cog):
                 usage="voice unmute <member>")
     @commands.has_permissions(administrator=True)
     @commands.cooldown(1, 10, commands.BucketType.user)
-    @blacklist_check()
-    @ignore_check()
+    
+    
     @commands.max_concurrency(1, per=commands.BucketType.default, wait=False)
     async def vcunmute(self, ctx, *, member: discord.Member):
         if member.voice is None:
@@ -172,8 +186,8 @@ class VoiceCmd(commands.Cog):
                 usage="voice muteall")
     @commands.has_permissions(administrator=True)
     @commands.cooldown(1, 10, commands.BucketType.user)
-    @blacklist_check()
-    @ignore_check()
+    
+    
     @commands.max_concurrency(1, per=commands.BucketType.default, wait=False)
     async def _muteall(self, ctx):
         if ctx.author.voice is None:
@@ -208,8 +222,8 @@ class VoiceCmd(commands.Cog):
                 usage="voice unmuteall")
     @commands.has_permissions(administrator=True)
     @commands.cooldown(1, 10, commands.BucketType.user)
-    @blacklist_check()
-    @ignore_check()
+    
+    
     @commands.max_concurrency(1, per=commands.BucketType.default, wait=False)
     async def _unmuteall(self, ctx):
         if ctx.author.voice is None:
@@ -244,8 +258,8 @@ class VoiceCmd(commands.Cog):
                 usage="voice deafen <member>")
     @commands.has_permissions(administrator=True)
     @commands.cooldown(1, 10, commands.BucketType.user)
-    @blacklist_check()
-    @ignore_check()
+    
+    
     @commands.max_concurrency(1, per=commands.BucketType.default, wait=False)
     async def _deafen(self, ctx, *, member: discord.Member):
         if member.voice is None:
@@ -284,8 +298,8 @@ class VoiceCmd(commands.Cog):
                 usage="voice undeafen <member>")
     @commands.has_permissions(administrator=True)
     @commands.cooldown(1, 10, commands.BucketType.user)
-    @blacklist_check()
-    @ignore_check()
+    
+    
     @commands.max_concurrency(1, per=commands.BucketType.default, wait=False)
     async def _undeafen(self, ctx, *, member: discord.Member):
         if member.voice is None:
@@ -325,8 +339,8 @@ class VoiceCmd(commands.Cog):
                 usage="voice deafenall")
     @commands.has_permissions(administrator=True)
     @commands.cooldown(1, 10, commands.BucketType.user)
-    @blacklist_check()
-    @ignore_check()
+    
+    
     @commands.max_concurrency(1, per=commands.BucketType.default, wait=False)
     async def _deafenall(self, ctx):
         if ctx.author.voice is None:
@@ -361,8 +375,8 @@ class VoiceCmd(commands.Cog):
                 usage="voice undeafenall")
     @commands.has_permissions(administrator=True)
     @commands.cooldown(1, 10, commands.BucketType.user)
-    @blacklist_check()
-    @ignore_check()
+    
+    
     @commands.max_concurrency(1, per=commands.BucketType.default, wait=False)
     async def _undeafall(self, ctx):
         if ctx.author.voice is None:
@@ -398,8 +412,8 @@ class VoiceCmd(commands.Cog):
                 usage="voice moveall <voice channel>")
     @commands.has_permissions(administrator=True)
     @commands.cooldown(1, 10, commands.BucketType.user)
-    @blacklist_check()
-    @ignore_check()
+    
+    
     @commands.max_concurrency(1, per=commands.BucketType.default, wait=False)
     async def _moveall(self, ctx, *, channel: discord.VoiceChannel):
         if ctx.author.voice is None:
@@ -439,3 +453,7 @@ class VoiceCmd(commands.Cog):
                                icon_url=f"{ctx.author.avatar}")
             hacker1.set_thumbnail(url=f"{ctx.author.avatar}")
             await ctx.reply(embed=hacker1)
+            
+            
+def setup(bot):
+    bot.add_cog(VoiceCmd(bot))

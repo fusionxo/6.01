@@ -1,6 +1,8 @@
 import random
 import discord
 from discord.ext import commands
+from utils import *
+from utils.checks import global_check
 
 truth_norm = ["When was the last time you told a lie?",
 "What is your biggest fear?",
@@ -369,6 +371,8 @@ class TD(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
 
+    async def cog_check(self, ctx: commands.Context) -> bool:
+        return await global_check(ctx)
   
     @commands.command()
     async def truth(self, ctx):
