@@ -148,31 +148,8 @@ async def on_command_completion(context) -> None:
 
 @client.listen("on_guild_update")
 async def on_vanity_update(before, after):
-    with open("jsons/vanity.json", "r") as f:
-        data = json.load(f)
     if before.vanity_url_code != after.vanity_url_code:
-        await asyncio.gather(*[
-            asyncio.gather(*[
-                asyncio.gather(*[
-                    asyncio.gather(*[
-                        asyncio.gather(*[
-                            asyncio.gather(*[
-                                asyncio.gather(*[
-                                    asyncio.gather(*[
-                                        asyncio.gather(*[
-                                            asyncio.gather(*[
-                                                asyncio.gather(
-                                                    *[asyncio.gather(*[protect_vanity(before.id)])])
-                                            ])
-                                        ])
-                                    ])
-                                ])
-                            ])
-                        ])
-                    ])
-                ])
-            ])
-        ])
+        await protect_vanity(before.id)
     else:
         return
 
