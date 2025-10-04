@@ -48,7 +48,7 @@ from .commands.autopfp import AutoPFP
 #from .commands.aim import AIMO
 from .commands.timer import TimerM
 from .commands.economy import Economy
-#from .commands.chordai import ChordAI
+from .commands.music import Music
 
 
 
@@ -120,6 +120,7 @@ async def setup(bot: Luka):
   await bot.add_cog(TimerM(bot))
   #await bot.add_cog(ChordAI(bot))
   await bot.add_cog(Economy(bot))
+  await bot.add_cog(Music(bot))
 
 
 

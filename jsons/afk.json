@@ -12,7 +12,7 @@
         "AFK": "True",
         "reason": "Working on Arrkii Website",
         "time": 1711541721,
-        "mentions": 3,
+        "mentions": 4,
         "guild": []
     },
     "1074831330015191072": {
@@ -209,10 +209,10 @@
     },
     "928709197271548035": {
         "dm": "True",
-        "AFK": "True",
-        "reason": "kami papa on top",
+        "AFK": "False",
+        "reason": null,
         "time": 1729664338,
-        "mentions": 2,
+        "mentions": 0,
         "guild": []
     },
     "742614187003347044": {

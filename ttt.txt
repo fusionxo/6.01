@@ -1,0 +1,1 @@
+discord asyncio gTTS jishaku pillow pymongo validators tasksio psutil pytz requests flask google-generativeai reactionmenu discord-ext-menus googletrans PyNaCl Faker aiosqlite aiofiles motor wavelink setuptools 
