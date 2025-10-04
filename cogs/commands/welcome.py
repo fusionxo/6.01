@@ -51,8 +51,8 @@ class EmbedMenuModal(discord.ui.Modal, title="Embed Builder"):
 
         # Build the embed
         embed = discord.Embed(
-            title=self.embed_title.value or discord.Embed.Empty,
-            description=self.embed_description.value or discord.Embed.Empty,
+            title=self.embed_title.value or None,
+            description=self.embed_description.value or None,
             color=color_value
         )
         if self.embed_thumbnail.value:
@@ -100,10 +100,10 @@ class Welcome(commands.Cog):
             "user_mention": member.mention,
             "user_tag": str(member),
             "user_discriminator": member.discriminator,
-            "user_avatar_url": str(member.avatar.url) if member.avatar else "",
+            "user_avatar_url": member.display_avatar.url,
             "server_name": member.guild.name,
             "server_membercount": member.guild.member_count,
-            "server_icon_url": str(member.guild.icon.url) if member.guild.icon else ""
+            "server_icon_url": member.guild.icon.url if member.guild.icon else ""
         }
 
     def process_embed(self, embed_data, format_kwargs):
@@ -299,5 +299,5 @@ class Welcome(commands.Cog):
         
         
         
-def setup(bot):
-    bot.add_cog(Welcome(bot))
+async def setup(bot):
+    await bot.add_cog(Welcome(bot))

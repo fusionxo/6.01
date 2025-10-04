@@ -104,7 +104,7 @@ class HelpDropdown(discord.ui.Select):
         if cog:
             self.view.session_interactions += 1
             final_embed = await self.view.help_command.get_cog_help_embed(cog, interaction)
-            await interaction.edit_original_response(embed=final_embed, view=self.view)
+            await interaction.message.edit(embed=final_embed, view=self.view)
 
 
 class EnhancedHelpView(discord.ui.View):
@@ -145,7 +145,7 @@ class EnhancedHelpView(discord.ui.View):
         self.session_interactions += 1
         
         animated_embed = self.create_animated_embed("Fetching Live Statistics...")
-        await interaction.edit_original_response(embed=animated_embed, view=self)
+        await interaction.message.edit(embed=animated_embed, view=self)
 
         process = psutil.Process()
         latency = round(self.bot.latency * 1000)
@@ -158,7 +158,7 @@ class EnhancedHelpView(discord.ui.View):
         stats_embed.set_footer(text="Statistics are updated in real-time.")
         
         await asyncio.sleep(0.7)
-        await interaction.edit_original_response(embed=stats_embed, view=self)
+        await interaction.message.edit(embed=stats_embed, view=self)
 
     @discord.ui.button(label="Close", style=discord.ButtonStyle.danger, emoji="✖️", row=2)
     async def close_button(self, interaction: discord.Interaction, button: discord.ui.Button):
@@ -291,7 +291,7 @@ class NewHelpCommand(commands.HelpCommand):
         if matches:
             embed.add_field(name="Did you mean...?", value="\n".join(f"• `{match}`" for match in matches))
         
-        await self.context.reply(embed=embed, ephemeral=True)
+        await self.context.reply(embed=embed, mention_author=False)
 
     async def is_blacklisted_or_ignored(self, ctx: Context) -> bool:
         try:

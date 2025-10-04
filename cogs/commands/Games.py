@@ -24,8 +24,8 @@ class Games(commands.Cog):
     async def sayhello(self, ctx):
         """Say hello to the bot!"""
         embed = discord.Embed(title="👋 Hello!", color=0x977FD7)
-        embed.set_thumbnail(url=ctx.author.avatar.url)
-        embed.set_footer(text=f"Requested by {ctx.author.name}", icon_url=ctx.author.avatar.url)
+        embed.set_thumbnail(url=ctx.author.display_avatar.url)
+        embed.set_footer(text=f"Requested by {ctx.author.name}", icon_url=ctx.author.display_avatar.url)
         await ctx.send(embed=embed)
 
     @commands.command()
@@ -38,8 +38,8 @@ class Games(commands.Cog):
         import random
         result = random.randint(1, sides)
         embed = discord.Embed(title="🎲 Dice Roll", description=f"You rolled a {result}!", color=0x977FD7)
-        embed.set_thumbnail(url=ctx.author.avatar.url)
-        embed.set_footer(text=f"Requested by {ctx.author.name}", icon_url=ctx.author.avatar.url)
+        embed.set_thumbnail(url=ctx.author.display_avatar.url)
+        embed.set_footer(text=f"Requested by {ctx.author.name}", icon_url=ctx.author.display_avatar.url)
         await ctx.send(embed=embed)
 
     @commands.command()
@@ -52,8 +52,8 @@ class Games(commands.Cog):
         import random
         choice = random.choice(choices)
         embed = discord.Embed(title="🤔 I Choose...", description=f"I choose **{choice}**!", color=0x977FD7)
-        embed.set_thumbnail(url=ctx.author.avatar.url)
-        embed.set_footer(text=f"Requested by {ctx.author.name}", icon_url=ctx.author.avatar.url)
+        embed.set_thumbnail(url=ctx.author.display_avatar.url)
+        embed.set_footer(text=f"Requested by {ctx.author.name}", icon_url=ctx.author.display_avatar.url)
         await ctx.send(embed=embed)
 
     @commands.command()
@@ -62,8 +62,8 @@ class Games(commands.Cog):
         import random
         result = random.choice(["Heads", "Tails"])
         embed = discord.Embed(title="🪙 Coin Flip", description=f"The coin landed on **{result}**!", color=0x977FD7)
-        embed.set_thumbnail(url=ctx.author.avatar.url)
-        embed.set_footer(text=f"Requested by {ctx.author.name}", icon_url=ctx.author.avatar.url)
+        embed.set_thumbnail(url=ctx.author.display_avatar.url)
+        embed.set_footer(text=f"Requested by {ctx.author.name}", icon_url=ctx.author.display_avatar.url)
         await ctx.send(embed=embed)
 
     @commands.command()
@@ -79,17 +79,17 @@ class Games(commands.Cog):
             compliment = random.choice(compliments)
             embed = discord.Embed(title="💖 Compliment", description=f"{user.mention}, {compliment}", color=0x977FD7)
 
-        embed.set_thumbnail(url=ctx.author.avatar.url)
-        embed.set_footer(text=f"Requested by {ctx.author.name}", icon_url=ctx.author.avatar.url)
+        embed.set_thumbnail(url=ctx.author.display_avatar.url)
+        embed.set_footer(text=f"Requested by {ctx.author.name}", icon_url=ctx.author.display_avatar.url)
         await ctx.send(embed=embed)
 
     @commands.command()
     async def vhug(self, ctx, user: discord.Member):
         """Send a virtual hug to a user!"""
         embed = discord.Embed(title="🤗 Virtual Hug", description=f"{ctx.author.mention} sent a hug to {user.mention}!", color=0x977FD7)
-        embed.set_thumbnail(url=ctx.author.avatar.url)
-        embed.set_footer(text=f"Requested by {ctx.author.name}", icon_url=ctx.author.avatar.url)
+        embed.set_thumbnail(url=ctx.author.display_avatar.url)
+        embed.set_footer(text=f"Requested by {ctx.author.name}", icon_url=ctx.author.display_avatar.url)
         await ctx.send(embed=embed)
 
-def setup(bot):
-    bot.add_cog(Games(bot))
+async def setup(bot):
+    await bot.add_cog(Games(bot))

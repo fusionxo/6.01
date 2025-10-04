@@ -1,13 +1,21 @@
 from __future__ import annotations
-
 from discord.ext import commands
 import discord
 import functools
 from typing import Optional, Any
 import asyncio
 
-__all__ = ("Context", )
+__all__ = ("Context", "with_type")
 
+def with_type(func):
+    @functools.wraps(func)
+    async def wrapped(self, ctx: commands.Context, *args, **kwargs):
+        try:
+            async with ctx.typing():
+                await func(self, ctx, *args, **kwargs)
+        except discord.Forbidden:
+            await func(self, ctx, *args, **kwargs)
+    return wrapped
 
 class Context(commands.Context):
     """A custom implementation of commands.Context class."""
@@ -22,24 +30,11 @@ class Context(commands.Context):
         return self.bot.session
 
     @discord.utils.cached_property
-    def replied_reference(self) -> Optional[discord.Message]:
+    def replied_reference(self) -> Optional[discord.MessageReference]:
         ref = self.message.reference
         if ref and isinstance(ref.resolved, discord.Message):
             return ref.resolved.to_reference()
         return None
-
-    def with_type(func):
-        @functools.wraps(func)
-        async def wrapped(self, *args, **kwargs):
-            context = args[0] if isinstance(args[0],
-                                            commands.Context) else args[1]
-            try:
-                async with context.typing():
-                    await func(*args, **kwargs)
-            except discord.Forbidden:  # Thanks cloudflare
-                await func(*args, **kwargs)
-
-        return wrapped
 
     async def show_help(self, command: str = None) -> Any:
         cmd = self.bot.get_command('help')

@@ -31,18 +31,27 @@ class Luka(commands.AutoShardedBot):
       super().__init__(command_prefix=self.get_prefix,
                          case_insensitive=True,
                          intents=intents,
-                         status=discord.Status.dnd,
                          strip_after_prefix=True,
-                         owner_ids=OWNER_IDS,                        allowed_mentions=discord.AllowedMentions(everyone=False, replied_user=False,roles=False),sync_commands_debug= True, sync_commands=True,shard_count=1)
+                         owner_ids=OWNER_IDS,
+                         allowed_mentions=discord.AllowedMentions(everyone=False, replied_user=False,roles=False),
+                         shard_count=1)
       self.add_check(global_check)
 
+    async def setup_hook(self) -> None:
+        for extension in EXTENSIONS:
+            try:
+                await self.load_extension(extension)
+                print(f"Loaded extension: {extension}")
+            except Exception as e:
+                print(f"Failed to load extension: {extension}")
+                print(e)
+        await self.tree.sync()
 
     async def on_ready(self):
         print("Connected as {}".format(self.user))
 
     async def on_connect(self):
       await self.change_presence(status=discord.Status.dnd, activity=discord.Activity(type=discord.ActivityType.listening, name=f'$help'))
-      await self.tree.sync()
 
     async def send_raw(self, channel_id: int, content: str,
                        **kwargs) -> typing.Optional[discord.Message]:
@@ -84,7 +93,7 @@ class Luka(commands.AutoShardedBot):
                 return
             if ctx.command is None:
                 return
-            if type(ctx.channel) == "public_thread":
+            if isinstance(ctx.channel, discord.Thread):
                 return
             await self.invoke(ctx)
         else:
