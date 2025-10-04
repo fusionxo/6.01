@@ -539,8 +539,6 @@ class Music(commands.Cog):
                 return await ctx.send("❌ Could not connect to the voice channel.")
 
         player.text_channel = ctx.channel
-        if not player.volume:
-            await player.set_volume(100)
 
         tracks = await wavelink.Playable.search(query)
         if not tracks:
@@ -651,8 +649,8 @@ class Music(commands.Cog):
     @commands.command(name='volume', aliases=['v'])
     @player_check()
     async def volume(self, ctx: commands.Context, value: int):
-        if not 0 <= value <= 200:
-            return await ctx.send("❌ Volume must be between 0 and 200.")
+        if not 0 <= value <= 100:
+            return await ctx.send("❌ Volume must be between 0 and 100.")
         player = cast(LavalinkPlayer, ctx.voice_client)
         await player.set_volume(value)
         await ctx.send(f"🔊 Volume set to {value}%.")

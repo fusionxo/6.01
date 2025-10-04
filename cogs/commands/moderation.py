@@ -30,7 +30,19 @@ class Moderation(commands.Cog):
             self.moderation_data = json.load(f)
             
     async def cog_check(self, ctx: commands.Context) -> bool:
-        return await global_check(ctx)
+        if not await global_check(ctx):
+            return False
+        if ctx.command.name in ["moderation_enable", "moderation_disable"]:
+            return True
+        if not self.is_moderation_enabled(ctx):
+            embed = discord.Embed(
+                title="Moderation is currently disabled for this server.",
+                color=0x977FD7
+            )
+            embed.add_field(name="Enable Moderation", value="To enable it kindly type `$menable`")
+            await ctx.send(embed=embed)
+            return False
+        return True
             
     def help_custom(self):
 		      emoji = '<:usershield:1087776624486920294>'
@@ -82,29 +94,6 @@ class Moderation(commands.Cog):
             await ctx.send("Moderation has been disabled for this server.")
         else:
             await ctx.send("<:info:1087776877898383400> | Only the Server Owner can use this command.")
-
-    async def cog_check(cls, ctx: commands.Context) -> bool:
-        if not isinstance(ctx.guild, discord.Guild):
-            return False
-        
-        # Ignore moderation status for moderation_enable and moderation_disable commands
-        if ctx.command.name in ["moderation_enable", "moderation_disable"]:
-            return True
-
-        if not cls.is_moderation_enabled(ctx):
-            embed = discord.Embed(
-                title="Moderation is currently disabled for this server.",
-                color=0x977FD7
-            )
-            embed.add_field(name="Enable Moderation", value="To enable it kindly type `$menable`")
-            await ctx.send(embed=embed)
-            return False
-
-
-        return True
-
-
-    # ...
 
     @commands.hybrid_command(name="prefix", aliases=["setprefix","prefixset"], help="Allows you to change prefix of the bot for this server")
     
@@ -337,7 +326,7 @@ class Moderation(commands.Cog):
                 if member.guild_permissions.administrator:
                     await ctx.reply("<:error:1088542929158688788> | I can't mute administrators")
                 else:
-                    await member.timeout(discord.utils.utcnow() + t, reason="Command By: {0}".format(ctx.author))
+                    await member.timeout(t, reason="Command By: {0}".format(ctx.author))
                     await ctx.send(msg)
             except:
                 await ctx.send("<:info:1087776877898383400> | An error occurred")
@@ -353,7 +342,7 @@ class Moderation(commands.Cog):
             return await ctx.reply("Moderation is not enabled for this server.")
         if member.is_timed_out():
             try:
-                await member.edit(timed_out_until=None)
+                await member.timeout(None, reason=f"Command by {ctx.author}")
             except Exception as e:
                 await ctx.send("Unable to Remove Timeout:\n```py\n{}```".format(e))
             else:
@@ -434,7 +423,7 @@ class Moderation(commands.Cog):
             if member is None:
                 try:
                     user = await self.bot.fetch_user(user_id)
-                    await ctx.guild.ban(user, reason=reason, delete_message_days=7)
+                    await ctx.guild.ban(user, reason=reason, delete_message_seconds=604800)
                     
                     embed = discord.Embed(
                         color=0x977FD7,
@@ -470,7 +459,7 @@ class Moderation(commands.Cog):
 
         if ctx.author.top_role.position > member.top_role.position or ctx.author.id == ctx.guild.owner.id:
             try:
-                await member.ban(reason=reason, delete_message_days=7)
+                await member.ban(reason=reason, delete_message_seconds=604800)
                 embed = discord.Embed(
                     color=0x977FD7,
                     description=f"<:check:1087776909246607360> | {member.display_name} has been successfully banned",

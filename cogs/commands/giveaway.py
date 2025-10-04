@@ -208,7 +208,7 @@ class GiveawaySetupView(discord.ui.View):
     async def set_winners_button(self, interaction: discord.Interaction, button: discord.ui.Button):
         await interaction.response.send_modal(GiveawayInputModal(self, "Set Winner Count", "Winners", "e.g., 1"))
 
-    @discord.ui.select(cls=discord.ui.ChannelSelect, channel_types=[discord.ChannelType.text], placeholder="Select a channel...", row=1)
+    @discord.ui.channel_select(placeholder="Select a channel...", channel_types=[discord.ChannelType.text], row=1)
     async def channel_select(self, interaction: discord.Interaction, select: discord.ui.ChannelSelect):
         self.channel = select.values[0]
         await interaction.response.defer()

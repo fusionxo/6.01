@@ -3,7 +3,12 @@ import logging
 from discord.ext import commands
 import pymongo
 
-class ready(commands.Cog):
+import discord
+import logging
+from discord.ext import commands
+import pymongo
+
+class Ready(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
         self.color = 0x2f3136
@@ -90,3 +95,6 @@ class ready(commands.Cog):
     @commands.Cog.listener()
     async def on_shard_resume(self, shard_id):
         logging.info("Shard #%s has resumed" % (shard_id))
+
+async def setup(bot):
+    await bot.add_cog(Ready(bot))

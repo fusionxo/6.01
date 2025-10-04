@@ -14,8 +14,8 @@ class Security(Cog):
   def __init__(self, client:Luka):
     self.client = client
 
-    async def cog_check(self, ctx: commands.Context) -> bool:
-        return await global_check(ctx)
+  async def cog_check(self, ctx: commands.Context) -> bool:
+    return await global_check(ctx)
     
   def help_custom(self):
 		    emoji = '<:securityconfig:1087776720368709752>'
@@ -30,9 +30,6 @@ class Security(Cog):
 
 
   @commands.group(name="Antinuke", aliases=["anti", "Security"], help="Enables/Disables antinuke in your server!", invoke_without_command=True, usage="Antinuke Enable/Disable")
-  
-  
-
   @commands.cooldown(1, 10, commands.BucketType.user)
   @commands.max_concurrency(1, per=commands.BucketType.default, wait=False)
   @commands.guild_only()
@@ -42,9 +39,6 @@ class Security(Cog):
         ctx.command.reset_cooldown(ctx)
 
   @_antinuke.command(name="enable", help="Server owner should enable antinuke for the server!",usage="Antinuke Enable")
-  
-  
-
   @commands.cooldown(1, 10, commands.BucketType.user)
   @commands.max_concurrency(1, per=commands.BucketType.default, wait=False)
   @commands.guild_only()
@@ -70,9 +64,6 @@ class Security(Cog):
       await ctx.reply(embed=hacker5, mention_author=False)
 
   @_antinuke.command(name="disable", help="You can disable antinuke for your server using this command", aliases=["off"],usage="Antinuke disable")
-  
-  
-
   @commands.cooldown(1, 10, commands.BucketType.user)
   @commands.max_concurrency(1, per=commands.BucketType.default, wait=False)
   @commands.guild_only()
@@ -89,9 +80,6 @@ class Security(Cog):
         await ctx.reply(embed=final, mention_author=False)
 
   @_antinuke.command(name="show", help="Shows currently antinuke config settings of your server", aliases=["config"],usage="Antinuke show")
-  
-  
-
   @commands.has_permissions(administrator=True)
   @commands.cooldown(1, 10, commands.BucketType.user)
   @commands.max_concurrency(1, per=commands.BucketType.default, wait=False)
@@ -112,9 +100,6 @@ class Security(Cog):
 
   
   @_antinuke.command(name="recover", help="Deletes all channels with name of rules and moderator-only",usage="Antinuke recover")
-  
-  
-
   @commands.has_permissions(administrator=True)
   @commands.cooldown(1, 10, commands.BucketType.user)
   @commands.max_concurrency(1, per=commands.BucketType.default, wait=False)
@@ -129,8 +114,6 @@ class Security(Cog):
     await ctx.reply("Successfully Deleted All Channels With Name Of `rules, moderator-only`", mention_author=False)
 
   @_antinuke.group(name="punishment", help="Changes Punishment of antinuke and antiraid for this server.", invoke_without_command=True,usage="Antinuke punishment set/show")
-  
-  
   @commands.has_permissions(administrator=True)
   @commands.cooldown(1, 10, commands.BucketType.user)
   @commands.max_concurrency(1, per=commands.BucketType.default, wait=False)
@@ -141,9 +124,6 @@ class Security(Cog):
         ctx.command.reset_cooldown(ctx)
 
   @_punishment.command(name="set", help="Changes Punishment of antinuke and automod for this server.", aliases=["change"],usage="Antinuke punishment set <none>")
-  
-  
-
   @commands.has_permissions(administrator=True)
   @commands.cooldown(1, 10, commands.BucketType.user)
   @commands.max_concurrency(1, per=commands.BucketType.default, wait=False)
@@ -189,8 +169,6 @@ class Security(Cog):
             await ctx.reply(embed=hacker5, mention_author=False)
 
   @_punishment.command(name="show", help="Shows custom punishment type for this server",usage="Antinuke punishment show")
-  
-  
   @commands.has_permissions(administrator=True)
   @commands.cooldown(1, 10, commands.BucketType.user)
   @commands.max_concurrency(1, per=commands.BucketType.default, wait=False)
@@ -201,8 +179,6 @@ class Security(Cog):
     hacker5 = discord.Embed(color=0x977FD7,title="Luka", description="Custom punishment of anti-nuke and automod in this is: **{}**".format(punish.title()))
     await ctx.reply(embed=hacker5,mention_author=False)
   @_antinuke.command(name="setvanity", aliases=['vanityset', 'vanity'], help="Sets vanity code in database and reverts when server vanity is changed",usage="Antinuke setvanity <vanity_code>")
-  
-  
   @commands.cooldown(1, 10, commands.BucketType.user)
   @commands.max_concurrency(1, per=commands.BucketType.default, wait=False)
   @commands.guild_only()
@@ -244,9 +220,6 @@ class Security(Cog):
             await ctx.reply(embed=hacker4, mention_author=False)
 
   @_antinuke.command(name="channelclean", aliases=['cc'], help="deletes channel with similar name provided.",usage="Antinuke channelclean <none>")
-  
-  
-
   @commands.cooldown(1, 30, commands.BucketType.user)
   @commands.max_concurrency(1, per=commands.BucketType.default, wait=False)
   @commands.guild_only()
@@ -275,9 +248,6 @@ class Security(Cog):
       await ctx.reply(embed=hacker4, mention_author=False)
 
   @_antinuke.command(name="roleclean", aliases=['cr'], help="deletes role with similar name provided",usage="Antinuke roleclean <none>")
-  
-  
-
   @commands.cooldown(1, 30, commands.BucketType.user)
   @commands.max_concurrency(1, per=commands.BucketType.default, wait=False)
   @commands.guild_only()
@@ -306,8 +276,6 @@ class Security(Cog):
       await ctx.reply(embed=hacker4, mention_author=False)
 
   @_antinuke.group(name="whitelist", aliases=["wl"], help="Whitelist your TRUSTED users for anti-nuke", invoke_without_command=True,usage="Antinuke whitelist add/remove")
-  
-  
   @commands.cooldown(1, 4, commands.BucketType.user)
   @commands.max_concurrency(1, per=commands.BucketType.default, wait=False)
   @commands.guild_only()
@@ -318,9 +286,6 @@ class Security(Cog):
         ctx.command.reset_cooldown(ctx)
       
   @_whitelist.command(name="add", help="Add a user to whitelisted users",usage="Antinuke whitelist add <user>")
-  
-  
-
   @commands.cooldown(1, 4, commands.BucketType.user)
   @commands.max_concurrency(1, per=commands.BucketType.default, wait=False)
   @commands.guild_only()
@@ -346,9 +311,6 @@ class Security(Cog):
 
 
   @_whitelist.command(name="remove", help="Remove a user from whitelisted users",usage="Antinuke whitelist remove <user>")
-  
-  
-
   @commands.cooldown(1, 4, commands.BucketType.user)
   @commands.max_concurrency(1, per=commands.BucketType.default, wait=False)
   @commands.guild_only()
@@ -371,8 +333,6 @@ class Security(Cog):
       await ctx.reply(embed=hacker5, mention_author=False)
 
   @_whitelist.command(name="show", help="Shows list of whitelisted users in the server.",usage="Antinuke whitelist show")
-  
-  
   @commands.cooldown(1, 4, commands.BucketType.user)
   @commands.max_concurrency(1, per=commands.BucketType.default, wait=False)
   @commands.guild_only()
@@ -391,9 +351,6 @@ class Security(Cog):
 
 
   @_whitelist.command(name="reset", help="removes every user from whitelist database", aliases=["clear"],usage="Antinuke whitelist reset")
-  
-  
-
   @commands.cooldown(1, 4, commands.BucketType.user)
   @commands.max_concurrency(1, per=commands.BucketType.default, wait=False)
   @commands.guild_only()
